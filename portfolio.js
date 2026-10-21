@@ -74,6 +74,7 @@
     modal.classList.remove("active");
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
+    document.documentElement.classList.remove("modal-open");
     if (opener && typeof opener.focus === "function") opener.focus();
   }
 
@@ -93,7 +94,9 @@
     modal.classList.add("active");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
-    modal.querySelector(".project-modal").scrollTop = 0;
+    document.documentElement.classList.add("modal-open");
+    var drawer = modal.querySelector(".project-modal");
+    if (drawer) drawer.scrollTop = 0;
     requestAnimationFrame(function () { if (closeBtn) closeBtn.focus(); });
   }
 
@@ -104,6 +107,9 @@
   if (closeBtn) closeBtn.addEventListener("click", closeModal);
   if (modal) {
     modal.addEventListener("click", function (event) { if (event.target === modal) closeModal(); });
+    modal.addEventListener("touchmove", function (event) {
+      if (event.target === modal) event.preventDefault();
+    }, { passive: false });
     modal.addEventListener("keydown", function (event) { // focus trap
       if (event.key !== "Tab") return;
       var f = modal.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])');

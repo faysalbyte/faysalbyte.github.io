@@ -22,6 +22,7 @@
 - sitemap listed the noindex thank-you page and a missing image.
 - `schema` email `hello@faysalbyte.github.io` does not exist -> your Gmail.
 - `cookie-banner.js` pointed to `/portfolio/privacy.html`, and unguarded `localStorage` (it is still not loaded on any page, as before).
+- Portfolio project modal responsive fix: on mobile screens, modal drawer is contained within the viewport (`100%` width, `100dvh` height with safe-area insets). `z-index` layering elevated to 2000 (modal overlay) and 2010 (close button) above fixed navbar (1000). Close button converted to sticky top-right so it stays permanently visible and clickable without scrolling off-screen. Robust background scroll-lock added to both `html` and `body` while maintaining smooth touch scrolling inside the modal.
 
 ## Reusable code
 - `common.js`: menu, year, reduced-motion, history-back (was copy-pasted in 4 files).
