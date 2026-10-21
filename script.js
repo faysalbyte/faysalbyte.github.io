@@ -1,1 +1,158 @@
-!function(){const e=document.getElementById("typing"),t=["INDUSTRIAL CERTIFIED MERN STACK DEVELOPER","WEB DESIGN & WEB DEVELOPMENT FOR FREELANCING TRAINER","National Skills Development Authority (NSDA) Level-3 & Level-5 CERTIFIED WEB DESIGN & WEB DEVELOPER FOR FREELANCING","National Skills Development Authority (NSDA) Level-4 ANDROID APP DEVELOPMENT WITH KOTLIN","National Skills Development Authority (NSDA) Level-3 & Level-4 DIGITAL MARKETING FOR FREELANCING (SEO)","SEO EXPERT..","Full STACK WEB DEVELOPER..","Frontend Developer..","Backend Developer..","CMS DEVELOPER..","CMS EXPERT..","Shopify EXPERT..","eCOMMERCE DEVELOPER..","WordPress DEVELOPER..","Webflow DEVELOPER..","Wix DEVELOPER..","Squarespace DEVELOPER..","Certified Software Quality Assurance National Skills Development Authority (NSDA) Level-3","Certified Software Quality Assurance","Knowledge UI/UX..","Knowledge DevOps .."],n=["#566574","#6b7280","#64748b","#5f6b78","#6b7280","#596572","#5b6875","#607080","#65717e","#5f6b78","#697582","#5e6b78","#66727e","#5b6875"];let i=0,o=0,a=!1;!function s(){if(!e)return;const r=t[i],l=n[i%n.length];return e.style.color=l,a?(o--,e.textContent=r.substring(0,o),o<=0?(a=!1,i=(i+1)%t.length,void setTimeout(s,350)):void setTimeout(s,35)):(o++,e.textContent=r.substring(0,o),o>=r.length?(a=!0,void setTimeout(s,1800)):void setTimeout(s,70))}();const s=document.getElementById("portrait");if(s){const L=s.querySelector(".image-first"),g=s.querySelector(".image-second"),D=document.getElementById("particles");let A=!1,b=!1,h=null;function r(){if(!D)return;D.innerHTML="";const e=window.innerWidth<=600,t=e?30:55;for(let n=0;n<t;n++){const t=document.createElement("span");t.className="particle";const n=(Math.random()-.5)*(e?300:480),i=(Math.random()-.5)*(e?400:620),o=5*Math.random()+2;t.style.width=o+"px",t.style.height=o+"px",t.style.left=100*Math.random()+"%",t.style.top=100*Math.random()+"%",t.style.setProperty("--x",n+"px"),t.style.setProperty("--y",i+"px"),t.style.animationDelay=.25*Math.random()+"s",D.appendChild(t)}}function l(e){e&&e.preventDefault(),A||b||A||(b=!0,clearTimeout(h),r(),s.classList.add("burning"),setTimeout(()=>{L&&(L.style.opacity="0"),g&&(g.style.opacity="1"),A=!0},650),setTimeout(()=>{s.classList.remove("burning"),D&&(D.innerHTML=""),b=!1},1300),h=setTimeout(()=>{!b&&A&&(b=!0,r(),s.classList.add("burning"),setTimeout(()=>{g&&(g.style.opacity="0"),L&&(L.style.opacity="1"),A=!1},650),setTimeout(()=>{s.classList.remove("burning"),D&&(D.innerHTML=""),b=!1},1300))},3e3))}s.addEventListener("mouseenter",l),s.addEventListener("touchstart",l,{passive:!1}),s.addEventListener("keydown",e=>{"Enter"!==e.key&&" "!==e.key||l(e)})}const E=document.getElementById("menuButton"),d=document.getElementById("mobileMenu");E&&d&&(E.addEventListener("click",()=>{const e=d.classList.toggle("open");E.setAttribute("aria-expanded",String(e)),E.setAttribute("aria-label",e?"Close navigation menu":"Open navigation menu")}),d.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>{d.classList.remove("open"),E.setAttribute("aria-expanded","false"),E.setAttribute("aria-label","Open navigation menu")})}),document.addEventListener("click",e=>{d.contains(e.target)||E.contains(e.target)||(d.classList.remove("open"),E.setAttribute("aria-expanded","false"),E.setAttribute("aria-label","Open navigation menu"))}));const u=document.querySelector(".background"),c=document.querySelector(".portrait-scene");let m=0,p=0,y=0,v=0;window.matchMedia("(hover:hover) and (pointer:fine)").matches&&c&&(window.addEventListener("mousemove",e=>{m=20*(e.clientX/window.innerWidth-.5),p=20*(e.clientY/window.innerHeight-.5)},{passive:!0}),function e(){y+=.04*(m-y),v+=.04*(p-v),u&&(u.style.transform=`translate3d(${.2*y}px,${.2*v}px,0)`),c.style.setProperty("--move-x",.04*y+"px"),c.style.setProperty("--move-y",.04*v+"px"),requestAnimationFrame(e)}()),window.addEventListener("resize",()=>{window.innerWidth>800&&d&&E&&(d.classList.remove("open"),E.setAttribute("aria-expanded","false"),E.setAttribute("aria-label","Open navigation menu"))},{passive:!0})}();
+/* script.js - home page only: typing headline, portrait burn transition, parallax.
+ * Menu / year / reduced-motion logic now lives in common.js. */
+(function () {
+  "use strict";
+
+  /* ---------- typing headline ---------- */
+  var typingEl = document.getElementById("typing");
+  var roles = [
+    "INDUSTRIAL CERTIFIED MERN STACK DEVELOPER",
+    "WEB DESIGN & WEB DEVELOPMENT FOR FREELANCING TRAINER",
+    "National Skills Development Authority (NSDA) Level-3 & Level-5 CERTIFIED WEB DESIGN & WEB DEVELOPER FOR FREELANCING",
+    "National Skills Development Authority (NSDA) Level-4 ANDROID APP DEVELOPMENT WITH KOTLIN",
+    "National Skills Development Authority (NSDA) Level-3 & Level-4 DIGITAL MARKETING FOR FREELANCING (SEO)",
+    "SEO EXPERT..",
+    "Full STACK WEB DEVELOPER..",
+    "Frontend Developer..",
+    "Backend Developer..",
+    "CMS DEVELOPER..",
+    "CMS EXPERT..",
+    "Shopify EXPERT..",
+    "eCOMMERCE DEVELOPER..",
+    "WordPress DEVELOPER..",
+    "Webflow DEVELOPER..",
+    "Wix DEVELOPER..",
+    "Squarespace DEVELOPER..",
+    "Certified Software Quality Assurance National Skills Development Authority (NSDA) Level-3",
+    "Certified Software Quality Assurance",
+    "Knowledge UI/UX..",
+    "Knowledge DevOps .."
+  ];
+  var colors = ["#566574", "#6b7280", "#64748b", "#5f6b78", "#6b7280", "#596572", "#5b6875", "#607080", "#65717e", "#5f6b78", "#697582", "#5e6b78", "#66727e", "#5b6875"];
+
+  if (typingEl) {
+    var roleIndex = 0, charCount = 0, deleting = false;
+    (function type() {
+      var text = roles[roleIndex];
+      typingEl.style.color = colors[roleIndex % colors.length];
+      if (deleting) {
+        charCount--;
+        typingEl.textContent = text.substring(0, charCount);
+        if (charCount <= 0) {
+          deleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(type, 350);
+        } else {
+          setTimeout(type, 35);
+        }
+      } else {
+        charCount++;
+        typingEl.textContent = text.substring(0, charCount);
+        if (charCount >= text.length) {
+          deleting = true;
+          setTimeout(type, 1800);
+        } else {
+          setTimeout(type, 70);
+        }
+      }
+    })();
+  }
+
+  /* ---------- portrait burn / image swap ---------- */
+  var portrait = document.getElementById("portrait");
+  if (portrait) {
+    var first = portrait.querySelector(".image-first");
+    var second = portrait.querySelector(".image-second");
+    var particleBox = document.getElementById("particles");
+    var showingSecond = false, busy = false, revertTimer = null;
+
+    var spawnParticles = function () {
+      if (!particleBox) return;
+      particleBox.innerHTML = "";
+      var small = window.innerWidth <= 600;
+      var total = small ? 30 : 55;
+      for (var i = 0; i < total; i++) {
+        var p = document.createElement("span");
+        var size = 5 * Math.random() + 2;
+        p.className = "particle";
+        p.style.width = size + "px";
+        p.style.height = size + "px";
+        p.style.left = 100 * Math.random() + "%";
+        p.style.top = 100 * Math.random() + "%";
+        p.style.setProperty("--x", (Math.random() - 0.5) * (small ? 300 : 480) + "px");
+        p.style.setProperty("--y", (Math.random() - 0.5) * (small ? 400 : 620) + "px");
+        p.style.animationDelay = 0.25 * Math.random() + "s";
+        particleBox.appendChild(p);
+      }
+    };
+
+    var burn = function (swap) {
+      busy = true;
+      spawnParticles();
+      portrait.classList.add("burning");
+      setTimeout(swap, 650);
+      setTimeout(function () {
+        portrait.classList.remove("burning");
+        if (particleBox) particleBox.innerHTML = "";
+        busy = false;
+      }, 1300);
+    };
+
+    var showSecond = function () {
+      if (first) first.style.opacity = "0";
+      if (second) second.style.opacity = "1";
+      showingSecond = true;
+    };
+    var showFirst = function () {
+      if (second) second.style.opacity = "0";
+      if (first) first.style.opacity = "1";
+      showingSecond = false;
+    };
+
+    var trigger = function (event) {
+      if (event) event.preventDefault();
+      if (showingSecond || busy) return;
+      clearTimeout(revertTimer);
+      burn(showSecond);
+      revertTimer = setTimeout(function () {
+        if (!busy && showingSecond) burn(showFirst);
+      }, 3000);
+    };
+
+    portrait.addEventListener("mouseenter", trigger);
+    portrait.addEventListener("touchstart", trigger, { passive: false });
+    portrait.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") trigger(event);
+    });
+  }
+
+  /* ---------- pointer parallax ----------
+   * Same easing as before, but the animation frame loop now stops once the
+   * values settle (and restarts on the next mouse move) instead of running
+   * forever. */
+  var background = document.querySelector(".background");
+  var scene = document.querySelector(".portrait-scene");
+  if (scene && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+    var targetX = 0, targetY = 0, curX = 0, curY = 0, running = false;
+    var frame = function () {
+      curX += 0.04 * (targetX - curX);
+      curY += 0.04 * (targetY - curY);
+      if (background) background.style.transform = "translate3d(" + 0.2 * curX + "px," + 0.2 * curY + "px,0)";
+      scene.style.setProperty("--move-x", 0.04 * curX + "px");
+      scene.style.setProperty("--move-y", 0.04 * curY + "px");
+      if (Math.abs(targetX - curX) > 0.01 || Math.abs(targetY - curY) > 0.01) {
+        requestAnimationFrame(frame);
+      } else {
+        running = false;
+      }
+    };
+    window.addEventListener("mousemove", function (event) {
+      targetX = 20 * (event.clientX / window.innerWidth - 0.5);
+      targetY = 20 * (event.clientY / window.innerHeight - 0.5);
+      if (!running) {
+        running = true;
+        requestAnimationFrame(frame);
+      }
+    }, { passive: true });
+  }
+})();

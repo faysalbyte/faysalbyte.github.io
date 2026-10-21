@@ -1,0 +1,238 @@
+{
+  "baseUrl": "https://faysalbyte.github.io/",
+  "siteName": "MD Faysal Hossain | Portfolio",
+  "author": "MD Faysal Hossain",
+  "alternateName": "FaysalByte",
+  "jobTitle": "MERN Stack Developer & Web Design Trainer",
+  "email": "md.faysal.hossain.moti.bddh@gmail.com",
+  "telephone": "+8801595530901",
+  "twitter": "@faysalbyte",
+  "themeColor": "#0d47a1",
+  "locale": "en_US",
+  "lastmod": "2026-10-22",
+  "verification": [
+    "woQ5ZlCoSW65sKqDOtWwidFSk_nDw0tGbM-BUpJoo6g",
+    "+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34="
+  ],
+  "reviewUrl": "https://g.page/r/CWAiqghQZkkaEBI/review",
+  "mapUrl": "https://maps.app.goo.gl/td2HsgJeBrUZF9W19",
+  "geo": {
+    "lat": 23.721564227607438,
+    "lng": 90.42476544331136
+  },
+  "sameAs": [
+    "https://bd.linkedin.com/in/faysalbyte",
+    "https://github.com/faysalbyte",
+    "https://x.com/faysalbyte",
+    "https://www.facebook.com/faysalbyte",
+    "https://www.instagram.com/faysalbyte/",
+    "https://www.youtube.com/@md.faysal.hossain",
+    "https://www.pinterest.com/faysalbyte/",
+    "https://www.tiktok.com/@faysalbyte",
+    "https://share.google/W5Fhmr1ncuTILC7j5",
+    "https://maps.app.goo.gl/td2HsgJeBrUZF9W19"
+  ],
+  "keywords": "MERN Stack Developer, Web Designer, Web Developer, SEO Expert, Freelance Developer, React.js, Node.js, MongoDB, Express.js, Tailwind CSS, Bootstrap, WordPress, Shopify, Wix, Ecommerce Developer, CMS Developer, Digital Marketing, NSDA Certified, Dhaka, Bangladesh, Remote Developer, USA, UK, Canada, Australia, Europe",
+  "knowsAbout": [
+    "MERN Stack Development",
+    "React.js",
+    "Node.js",
+    "MongoDB",
+    "Express.js",
+    "Tailwind CSS",
+    "Bootstrap",
+    "WordPress",
+    "Shopify",
+    "Wix",
+    "Ecommerce Development",
+    "CMS Development",
+    "SEO",
+    "Digital Marketing",
+    "Web Design",
+    "Web Development",
+    "Full Stack Development",
+    "Frontend Development",
+    "Backend Development",
+    "API Development",
+    "Responsive Web Design",
+    "UI/UX Design",
+    "Python Development",
+    "Android Development"
+  ],
+  "credentials": [
+    [
+      "NSDA Level-3 Web Design & Development",
+      "National Skills Development Authority (NSDA)"
+    ],
+    [
+      "NSDA Level-4 Android App Development with Kotlin",
+      "National Skills Development Authority (NSDA)"
+    ],
+    [
+      "NSDA Level-4 Web Application Development with Python",
+      "National Skills Development Authority (NSDA)"
+    ],
+    [
+      "Industrial MERN Stack Certification",
+      "Daffodil International Professional Training Institute"
+    ]
+  ],
+  "pages": {
+    "index.html": {
+      "path": "",
+      "title": "MD Faysal Hossain | MERN Stack Developer & Trainer",
+      "description": "Certified MERN Stack Developer, web designer, SEO expert and NSDA trainer in Dhaka. React, Node.js, MongoDB, eCommerce and CMS for remote clients worldwide.",
+      "css": [
+        "style.css"
+      ],
+      "scripts": [
+        "common.js",
+        "script.js"
+      ],
+      "type": "profile",
+      "name": "Home",
+      "priority": "1.0",
+      "changefreq": "weekly",
+      "preloadImage": "personal-img/md-faysal-hossain-mern-stack-developer.webp"
+    },
+    "skills.html": {
+      "path": "skills",
+      "title": "Skills & Certifications | MD Faysal Hossain",
+      "description": "Explore the NSDA certifications, MERN stack, web design, SEO, Android with Kotlin and Python skills of MD Faysal Hossain, a freelance developer and trainer.",
+      "css": [
+        "skills.css",
+        "contact.css"
+      ],
+      "scripts": [
+        "common.js",
+        "skills.js"
+      ],
+      "type": "website",
+      "name": "Skills & Certifications",
+      "priority": "0.9",
+      "changefreq": "monthly"
+    },
+    "portfolio.html": {
+      "path": "portfolio",
+      "title": "Portfolio & Projects | MD Faysal Hossain",
+      "description": "Selected web projects by MD Faysal Hossain: vanilla CSS, Bootstrap, Tailwind CSS, JavaScript and GSAP interfaces built with clean, responsive code.",
+      "css": [
+        "portfolio.css",
+        "contact.css"
+      ],
+      "scripts": [
+        "common.js",
+        "portfolio.js"
+      ],
+      "type": "website",
+      "name": "Portfolio",
+      "priority": "0.8",
+      "changefreq": "monthly"
+    },
+    "contact.html": {
+      "path": "contact",
+      "title": "Contact MD Faysal Hossain | Hire a MERN Developer",
+      "description": "Contact MD Faysal Hossain for MERN stack, web design, SEO and eCommerce projects. Based in Dhaka, Bangladesh, available for remote work worldwide.",
+      "css": [
+        "contact.css"
+      ],
+      "scripts": [
+        "common.js",
+        "contact.js"
+      ],
+      "type": "website",
+      "name": "Contact",
+      "priority": "0.7",
+      "changefreq": "monthly"
+    },
+    "ai-info.html": {
+      "path": "ai-info",
+      "title": "AI & SEO Information | MD Faysal Hossain",
+      "description": "How AI, SEO and modern web development fit together: semantic HTML, structured data, Core Web Vitals and AI-powered MERN applications.",
+      "css": [
+        "style.css"
+      ],
+      "scripts": [
+        "common.js"
+      ],
+      "type": "website",
+      "name": "AI & SEO Information",
+      "priority": "0.5",
+      "changefreq": "monthly"
+    },
+    "entity-map.html": {
+      "path": "entity-map",
+      "title": "Entity Map | MD Faysal Hossain",
+      "description": "Knowledge graph of MD Faysal Hossain's skills, technologies, certifications and services across web development, SEO and training.",
+      "css": [
+        "style.css"
+      ],
+      "scripts": [
+        "common.js"
+      ],
+      "type": "website",
+      "name": "Entity Map",
+      "priority": "0.5",
+      "changefreq": "monthly"
+    },
+    "privacy.html": {
+      "path": "privacy",
+      "title": "Privacy Policy | MD Faysal Hossain",
+      "description": "Privacy Policy for the MD Faysal Hossain portfolio: what information is collected through the contact form and how it is protected.",
+      "css": [
+        "style.css"
+      ],
+      "scripts": [
+        "common.js"
+      ],
+      "type": "website",
+      "name": "Privacy Policy",
+      "priority": "0.3",
+      "changefreq": "yearly"
+    },
+    "terms.html": {
+      "path": "terms",
+      "title": "Terms of Service | MD Faysal Hossain",
+      "description": "Terms of Service for the MD Faysal Hossain portfolio website. Read the conditions for using this site and its content.",
+      "css": [
+        "style.css"
+      ],
+      "scripts": [
+        "common.js"
+      ],
+      "type": "website",
+      "name": "Terms of Service",
+      "priority": "0.3",
+      "changefreq": "yearly"
+    },
+    "thank-you.html": {
+      "path": "thank-you",
+      "title": "Thank You | MD Faysal Hossain",
+      "description": "Thank you for contacting MD Faysal Hossain. Your message has been received and will be answered shortly.",
+      "css": [
+        "style.css"
+      ],
+      "scripts": [
+        "common.js"
+      ],
+      "type": "website",
+      "name": "Thank You",
+      "robots": "noindex, nofollow",
+      "sitemap": false
+    },
+    "404.html": {
+      "path": "404",
+      "title": "404 Page Not Found | MD Faysal Hossain",
+      "description": "The page you are looking for could not be found. Return to the MD Faysal Hossain portfolio.",
+      "css": [],
+      "scripts": [
+        "common.js"
+      ],
+      "type": "website",
+      "name": "Page Not Found",
+      "robots": "noindex, follow",
+      "sitemap": false,
+      "absolute": true
+    }
+  }
+}

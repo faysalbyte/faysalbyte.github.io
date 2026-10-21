@@ -1,56 +1,73 @@
-# robots.txt for MD Faysal Hossain Portfolio
-# https://faysalbyte.github.io/portfolio/robots.txt
+# robots.txt for https://faysalbyte.github.io/
+# NOTE: crawlers only read robots.txt at the host root, so this file must stay in the repo root.
 
 User-agent: *
 Allow: /
-Allow: /index.html
-Allow: /skills.html
-Allow: /portfolio.html
-Allow: /contact.html
-Allow: /thank-you.html
-Allow: /terms.html
-Allow: /privacy.html
-Allow: /ai-info.html
-Allow: /entity-map.html
-Allow: /404.html
-Allow: /css/
-Allow: /js/
-Allow: /images/
-Allow: /personal-img/
-Allow: /videos/
-Disallow: /assets/private/
-Disallow: /temp/
-Disallow: /admin/
-Disallow: /includes/
-Disallow: /config/
+Disallow: /tools/
+Disallow: /server-config/
 
-Sitemap: https://faysalbyte.github.io/portfolio/sitemap.xml
-
-# Crawl-delay for slower servers
-Crawl-delay: 0.5
-
-# Google bot specific
+# Search engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0.2
 
-# Bing bot specific
-User-agent: bingbot
+User-agent: Googlebot-Image
 Allow: /
-Crawl-delay: 0.2
 
-# AI scrapers (recommended to block or limit)
-User-agent: GPTBot
-Disallow: /
-User-agent: ChatGPT-User
-Disallow: /
-User-agent: ClaudeBot
-Disallow: /
-User-agent: Claude-Web
-Disallow: /
-User-agent: FacebookBot
+User-agent: Bingbot
 Allow: /
-User-agent: TwitterBot
+
+# Social preview crawlers
+User-agent: facebookexternalhit
 Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
 User-agent: LinkedInBot
 Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# AI search / answer-engine crawlers: allowed on purpose so the site can be
+# cited by AI assistants (GEO / LLMO / AEO). Change Allow to Disallow to opt out.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://faysalbyte.github.io/sitemap.xml

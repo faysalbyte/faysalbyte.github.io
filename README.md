@@ -4,7 +4,7 @@
   
 ### Certified MERN Stack Developer | Web Designer & Developer | Trainer | SEO Expert
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-View-ff7a00?style=for-the-badge&logo=google-chrome&logoColor=white)](https://faysalbyte.github.io/portfolio/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-View-ff7a00?style=for-the-badge&logo=google-chrome&logoColor=white)](https://faysalbyte.github.io/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/faysalbyte)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/faysalbyte)
 [![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/faysalbyte)
@@ -145,7 +145,7 @@ Hello! I'm **MD Faysal Hossain**, a passionate and certified **MERN Stack Develo
 
 <div align="center">
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-View-ff7a00?style=for-the-badge)](https://faysalbyte.github.io/portfolio/)
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-View-ff7a00?style=for-the-badge)](https://faysalbyte.github.io/)
 [![Email](https://img.shields.io/badge/📧_Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:md.faysal.hossain.moti.bddh@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/faysalbyte)
 [![Twitter](https://img.shields.io/badge/🐦_Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/faysalbyte)
@@ -171,3 +171,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer)
 
 </div>
+
+---
+
+## 🧰 Maintaining this site
+
+| Task | How |
+| --- | --- |
+| Change title / description / social image / schema / keywords | Edit `tools/site.config.json`, then `python3 tools/build.py` |
+| Check links, IDs, ARIA targets, JSON-LD, assets | `python3 tools/check.py` |
+| Shared behaviour (menu, footer year, reduced motion) | `common.js` |
+| Self-hosting configs (not used by GitHub Pages) | `.htaccess`, `server-config/` |
+
+See `CHANGES.md` for the full list of fixes.

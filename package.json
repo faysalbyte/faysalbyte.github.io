@@ -1,0 +1,20 @@
+{
+  "name": "faysalbyte-portfolio",
+  "version": "1.1.0",
+  "description": "Portfolio website of MD Faysal Hossain - MERN Stack Developer, Web Designer, SEO Expert and Trainer.",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "MD Faysal Hossain <md.faysal.hossain.moti.bddh@gmail.com> (https://faysalbyte.github.io/)",
+  "homepage": "https://faysalbyte.github.io/",
+  "repository": { "type": "git", "url": "git+https://github.com/faysalbyte/faysalbyte.github.io.git" },
+  "bugs": { "url": "https://github.com/faysalbyte/faysalbyte.github.io/issues" },
+  "keywords": ["portfolio", "mern-stack", "web-developer", "seo", "bangladesh"],
+  "type": "commonjs",
+  "main": "index.html",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "python3 tools/build.py",
+    "check": "python3 tools/check.py",
+    "serve": "npx --yes serve -l 8080 ."
+  }
+}

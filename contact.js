@@ -1,1 +1,149 @@
-"use strict";document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("#year, [data-current-year]").forEach(e=>{e.textContent=(new Date).getFullYear()});const e=document.getElementById("menuButton"),t=document.getElementById("mobileMenu"),n=()=>{e&&t&&(e.classList.remove("open"),t.classList.remove("open"),e.setAttribute("aria-expanded","false"),e.setAttribute("aria-label","Open navigation menu"),t.setAttribute("aria-hidden","true"))};e&&t&&(e.addEventListener("click",()=>{"true"===e.getAttribute("aria-expanded")?n():e&&t&&(e.classList.add("open"),t.classList.add("open"),e.setAttribute("aria-expanded","true"),e.setAttribute("aria-label","Close navigation menu"),t.setAttribute("aria-hidden","false"))}),t.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>{n()})}),document.addEventListener("click",r=>{t.contains(r.target)||e.contains(r.target)||n()}),document.addEventListener("keydown",t=>{"Escape"===t.key&&(n(),window.innerWidth<=850&&e.matches(":focus")&&e.focus())}),window.addEventListener("resize",()=>{window.innerWidth>850&&n()}));const r=document.getElementById("contactForm"),a=document.getElementById("submitButton"),s=document.getElementById("formStatus"),d={name:{element:document.getElementById("name"),error:document.getElementById("nameError")},email:{element:document.getElementById("email"),error:document.getElementById("emailError")},country:{element:document.getElementById("country"),error:document.getElementById("countryError")},message:{element:document.getElementById("message"),error:document.getElementById("messageError")}},l=e=>e?e.closest(".form-row")||e.closest(".field")||e.parentElement:null,o=(e,t)=>{if(!e||!e.element)return;const n=l(e.element);e.error&&(e.error.textContent=t),e.element.setAttribute("aria-invalid","true"),e.error&&e.element.setAttribute("aria-describedby",e.error.id),n&&n.classList.add("invalid")},i=e=>{if(!e||!e.element)return;const t=l(e.element);e.error&&(e.error.textContent=""),e.element.removeAttribute("aria-invalid"),t&&t.classList.remove("invalid")},c=e=>{const t=d[e];if(!t||!t.element)return!0;const n=t.element.value.trim();return"name"===e&&n.length<2?(o(t,"Please enter your name."),!1):"email"!==e||0!==n.length&&t.element.validity.valid?"country"!==e||n?"message"===e&&n.length<10?(o(t,"Please write at least 10 characters."),!1):(i(t),!0):(o(t,"Please select your country."),!1):(o(t,"Please enter a valid email address."),!1)};Object.keys(d).forEach(e=>{const t=d[e];t.element&&(t.element.addEventListener("blur",()=>{c(e)}),t.element.addEventListener("input",()=>{t.element.value.trim()&&i(t),u(t.element)}),t.element.addEventListener("change",()=>{c(e),u(t.element)}))});const m=(e,t)=>{if(!e||!t)return;const n=()=>{const n=e.value.length>0;t.classList.toggle("hidden",n)};e.addEventListener("input",n),e.addEventListener("focus",n),e.addEventListener("blur",n),n()},u=e=>{if(!e)return;let t=null;"name"===e.id&&(t=document.querySelector(".name-placeholder")),"subject"===e.id&&(t=document.querySelector(".subject-placeholder")),"message"===e.id&&(t=document.querySelector(".message-placeholder")),t&&t.classList.toggle("hidden",e.value.length>0)};m(document.getElementById("name"),document.querySelector(".name-placeholder")),m(document.getElementById("subject"),document.querySelector(".subject-placeholder")),m(document.getElementById("message"),document.querySelector(".message-placeholder"));const g=document.getElementById("whatsapp");g&&g.addEventListener("input",()=>{g.value=g.value.replace(/[^\d+\s()-]/g,"")});const E=document.getElementById("whatsappBox"),v=()=>{window.open("https://wa.me/8801595530901","_blank","noopener,noreferrer")};E&&("A"!==E.tagName&&"BUTTON"!==E.tagName&&(E.setAttribute("role","link"),E.setAttribute("tabindex","0")),E.addEventListener("click",v),E.addEventListener("keydown",e=>{"Enter"!==e.key&&" "!==e.key||(e.preventDefault(),v())}));const y=document.getElementById("softTouchLayer");if(y){let e;const t=(t,n)=>{y.style.left=`${t}px`,y.style.top=`${n}px`,y.classList.remove("active"),y.offsetWidth,y.classList.add("active"),clearTimeout(e),e=setTimeout(()=>{y.classList.remove("active")},1400)};document.addEventListener("pointerdown",e=>{t(e.clientX,e.clientY)},{passive:!0})}r&&a&&r.addEventListener("submit",e=>{let t=!0,n=null;if(Object.keys(d).forEach(e=>{c(e)||(t=!1,n||(n=d[e].element))}),!t)return e.preventDefault(),n&&n.focus({preventScroll:!1}),void(s&&(s.textContent="Please correct the highlighted fields.",s.className="form-status error",s.setAttribute("role","alert")));a.classList.add("loading"),a.setAttribute("aria-disabled","true"),a.setAttribute("aria-label","Sending message"),s&&(s.textContent="Sending your message...",s.className="form-status sending",s.setAttribute("role","status"))});const h=window.matchMedia("(prefers-reduced-motion: reduce)"),p=()=>{h.matches?document.documentElement.classList.add("reduce-motion"):document.documentElement.classList.remove("reduce-motion")};p(),h.addEventListener&&h.addEventListener("change",p)});
+/* contact.js - Contact page: validation, placeholder animation, AJAX submit.
+ * Menu / year / reduced-motion logic now lives in common.js. */
+(function () {
+  "use strict";
+
+  var form = document.getElementById("contactForm");
+  var submitButton = document.getElementById("submitButton");
+  var statusEl = document.getElementById("formStatus");
+
+  var fields = {};
+  ["name", "email", "country", "message"].forEach(function (id) {
+    fields[id] = { element: document.getElementById(id), error: document.getElementById(id + "Error") };
+  });
+
+  var wrapperOf = function (el) {
+    return el ? el.closest(".form-row") || el.closest(".field") || el.parentElement : null;
+  };
+
+  function showError(field, message) {
+    if (!field || !field.element) return;
+    var wrap = wrapperOf(field.element);
+    if (field.error) {
+      field.error.textContent = message;
+      field.element.setAttribute("aria-describedby", field.error.id);
+    }
+    field.element.setAttribute("aria-invalid", "true");
+    if (wrap) wrap.classList.add("invalid");
+  }
+
+  function clearError(field) {
+    if (!field || !field.element) return;
+    var wrap = wrapperOf(field.element);
+    if (field.error) field.error.textContent = "";
+    field.element.removeAttribute("aria-invalid");
+    if (wrap) wrap.classList.remove("invalid");
+  }
+
+  function validate(id) {
+    var field = fields[id];
+    if (!field || !field.element) return true;
+    var value = field.element.value.trim();
+    var message = "";
+    if (id === "name" && value.length < 2) message = "Please enter your name.";
+    else if (id === "email" && (value.length === 0 || !field.element.validity.valid)) message = "Please enter a valid email address.";
+    else if (id === "country" && !value) message = "Please select your country.";
+    else if (id === "message" && value.length < 10) message = "Please write at least 10 characters.";
+    if (message) { showError(field, message); return false; }
+    clearError(field);
+    return true;
+  }
+
+  /* ---- animated placeholders (name / subject / message) ---- */
+  var placeholders = [];
+  function bindPlaceholder(input, label) {
+    if (!input || !label) return;
+    var sync = function () { label.classList.toggle("hidden", input.value.length > 0); };
+    ["input", "focus", "blur", "change"].forEach(function (evt) { input.addEventListener(evt, sync); });
+    placeholders.push(sync);
+    sync();
+  }
+  bindPlaceholder(document.getElementById("name"), document.querySelector(".name-placeholder"));
+  bindPlaceholder(document.getElementById("subject"), document.querySelector(".subject-placeholder"));
+  bindPlaceholder(document.getElementById("message"), document.querySelector(".message-placeholder"));
+
+  Object.keys(fields).forEach(function (id) {
+    var field = fields[id];
+    if (!field.element) return;
+    field.element.addEventListener("blur", function () { validate(id); });
+    field.element.addEventListener("input", function () { if (field.element.value.trim()) clearError(field); });
+    field.element.addEventListener("change", function () { validate(id); });
+  });
+
+  /* WhatsApp field: digits, +, spaces, brackets and dashes only */
+  var whatsapp = document.getElementById("whatsapp");
+  if (whatsapp) {
+    whatsapp.addEventListener("input", function () {
+      whatsapp.value = whatsapp.value.replace(/[^\d+\s()-]/g, "");
+    });
+  }
+
+  function setStatus(text, kind, role) {
+    if (!statusEl) return;
+    statusEl.textContent = text;
+    statusEl.className = kind ? "form-status " + kind : "form-status";
+    if (role) statusEl.setAttribute("role", role);
+  }
+
+  function setButtonState(state) {
+    if (!submitButton) return;
+    submitButton.classList.toggle("loading", state === "loading");
+    submitButton.classList.toggle("done", state === "done");
+    if (state === "loading") {
+      submitButton.setAttribute("aria-disabled", "true");
+      submitButton.setAttribute("aria-label", "Sending message");
+    } else if (state === "done") {
+      submitButton.setAttribute("aria-disabled", "true");
+      submitButton.setAttribute("aria-label", "Message sent");
+    } else {
+      submitButton.removeAttribute("aria-disabled");
+      submitButton.setAttribute("aria-label", "Send message");
+    }
+  }
+
+  if (form && submitButton) {
+    form.addEventListener("submit", function (event) {
+      var valid = true, firstInvalid = null;
+      Object.keys(fields).forEach(function (id) {
+        if (!validate(id)) {
+          valid = false;
+          if (!firstInvalid) firstInvalid = fields[id].element;
+        }
+      });
+      if (!valid) {
+        event.preventDefault();
+        if (firstInvalid) firstInvalid.focus();
+        setStatus("Please correct the highlighted fields.", "error", "alert");
+        return;
+      }
+      if (submitButton.classList.contains("loading")) { event.preventDefault(); return; }
+
+      // No fetch support: let the browser submit the form normally.
+      if (!window.fetch || !window.FormData) {
+        setButtonState("loading");
+        setStatus("Sending your message...", "sending", "status");
+        return;
+      }
+
+      event.preventDefault();
+      setButtonState("loading");
+      setStatus("Sending your message...", "sending", "status");
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      }).then(function (response) {
+        if (!response.ok) throw new Error("HTTP " + response.status);
+        setButtonState("done");
+        setStatus("Thank you! Your message has been sent.", "", "status");
+        form.reset();
+        placeholders.forEach(function (sync) { sync(); });
+        setTimeout(function () { window.location.href = "thank-you"; }, 1600);
+      }).catch(function () {
+        setButtonState("idle");
+        setStatus("Sorry, your message could not be sent. Please try again or email me directly.", "error", "alert");
+      });
+    });
+  }
+})();

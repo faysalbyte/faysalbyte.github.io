@@ -1,1 +1,111 @@
-const menuButton=document.getElementById("menuButton"),mobileMenu=document.getElementById("mobileMenu");menuButton&&mobileMenu&&(menuButton.addEventListener("click",()=>{mobileMenu.classList.toggle("open")}),mobileMenu.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>{mobileMenu.classList.remove("open")})}));const heroSlide=document.querySelector(".hero-slide"),heroNext=document.querySelector(".hero-next"),heroPrev=document.querySelector(".hero-prev");let heroInterval;function nextHero(){const e=heroSlide.querySelectorAll(".hero-item");heroSlide.appendChild(e[0]),restartHeroAnimation()}function prevHero(){const e=heroSlide.querySelectorAll(".hero-item");heroSlide.prepend(e[e.length-1]),restartHeroAnimation()}function restartHeroAnimation(){heroSlide.querySelectorAll(".hero-content").forEach(e=>{e.style.animation="none",e.offsetHeight,e.style.animation=""})}function startHeroAutoSlide(){clearInterval(heroInterval),heroInterval=setInterval(()=>{nextHero()},2e3)}heroNext&&heroPrev&&heroSlide&&(heroNext.addEventListener("click",()=>{nextHero(),startHeroAutoSlide()}),heroPrev.addEventListener("click",()=>{prevHero(),startHeroAutoSlide()}),startHeroAutoSlide());const activityBoxes=document.querySelectorAll(".activity-box"),activityBackground=document.querySelector(".activity-background"),activityTitle=document.querySelector(".activity-title"),activityText=document.querySelector(".activity-text"),activityNumber=document.querySelector(".activity-number"),activityNext=document.querySelector(".activity-next"),activityPrev=document.querySelector(".activity-prev"),activities=[{title:"Fire Safety, Emergency Response and Rescue Training and Drill Completion Certificate",text:"Fundamentals of Fire ,Responsibility of a Fire Fighter ,Electrical and Chemical Safety Principles, Use of Personal Protective Equipment (PPE), Operate Fire Fighting Equipment & Carry Out Fire Drills, Perform First Aid and Rescue Management",image:"./personal-img/Fire-Safety-Emergency-Response-and-Rescue-Training-and-Drill-Completion-Certificate.webp"},{title:"CCTV INSTALLATION, SERVICING & MAINTENANCE",image:"./personal-img/CCTV-INSTALLATION-SERVICING-&-MAINTENANCE.webp"},{title:"VDP Training- Armed",image:"./personal-img/vdp.webp"},{title:"LAPTOP MOTHERBOARD REPAIR & SERVICING",image:"./personal-img/LAPTOP-MOTHERBOARD-REPAIR-&-SERVICING.webp"},{title:"Fundamental Training on Self-Defense For Youths",image:"./personal-img/Fundamental-Training-on-Self-Defense-For-Youths.webp"},{title:"Entrepreneurship Development Training.",image:"./personal-img/Entrepreneurship-Development-Training.webp"}];let activityInterval,currentActivity=0;function updateActivity(e){currentActivity=e;const t=activities[currentActivity];activityBoxes.forEach(e=>{e.classList.remove("active")}),activityBoxes[currentActivity]&&activityBoxes[currentActivity].classList.add("active"),activityBackground&&(activityBackground.style.backgroundImage=`url("${t.image}")`),activityTitle&&(activityTitle.textContent=t.title),activityText&&(activityText.textContent=t.text),activityNumber&&(activityNumber.textContent=String(currentActivity+1).padStart(2,"0"))}function nextActivity(){currentActivity=(currentActivity+1)%activities.length,updateActivity(currentActivity),startActivityAutoSlide()}function prevActivity(){currentActivity=(currentActivity-1+activities.length)%activities.length,updateActivity(currentActivity),startActivityAutoSlide()}function startActivityAutoSlide(){clearInterval(activityInterval),activityInterval=setInterval(()=>{currentActivity=(currentActivity+1)%activities.length,updateActivity(currentActivity)},2500)}activityBoxes.forEach((e,t)=>{e.addEventListener("click",()=>{updateActivity(t),startActivityAutoSlide()})}),activityNext&&activityNext.addEventListener("click",nextActivity),activityPrev&&activityPrev.addEventListener("click",prevActivity),activityBoxes.length&&(updateActivity(0),startActivityAutoSlide()),document.addEventListener("visibilitychange",()=>{document.hidden?(clearInterval(heroInterval),clearInterval(activityInterval)):(startHeroAutoSlide(),startActivityAutoSlide())}),document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("#year, [data-current-year]").forEach(e=>{e.textContent=(new Date).getFullYear()});const e=document.getElementById("menuButton"),t=document.getElementById("mobileMenu"),i=()=>{e&&t&&(e.classList.remove("open"),t.classList.remove("open"),e.setAttribute("aria-expanded","false"),e.setAttribute("aria-label","Open navigation menu"),t.setAttribute("aria-hidden","true"))};e&&t&&(e.addEventListener("click",()=>{"true"===e.getAttribute("aria-expanded")?i():e&&t&&(e.classList.add("open"),t.classList.add("open"),e.setAttribute("aria-expanded","true"),e.setAttribute("aria-label","Close navigation menu"),t.setAttribute("aria-hidden","false"))}),t.querySelectorAll("a").forEach(e=>{e.addEventListener("click",()=>{i()})}),document.addEventListener("click",n=>{t.contains(n.target)||e.contains(n.target)||i()}),document.addEventListener("keydown",t=>{"Escape"===t.key&&(i(),window.innerWidth<=850&&e.matches(":focus")&&e.focus())}),window.addEventListener("resize",()=>{window.innerWidth>850&&i()}));const n=document.getElementById("softTouchLayer");if(n){let e;const t=(t,i)=>{n.style.left=`${t}px`,n.style.top=`${i}px`,n.classList.remove("active"),n.offsetWidth,n.classList.add("active"),clearTimeout(e),e=setTimeout(()=>{n.classList.remove("active")},1400)};document.addEventListener("pointerdown",e=>{t(e.clientX,e.clientY)},{passive:!0})}const r=window.matchMedia("(prefers-reduced-motion: reduce)"),a=()=>{r.matches?document.documentElement.classList.add("reduce-motion"):document.documentElement.classList.remove("reduce-motion")};a(),r.addEventListener&&r.addEventListener("change",a)}),document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("menuButton"),t=document.getElementById("mobileMenu");if(!e||!t)return;const i=t.querySelectorAll("a"),n=n=>{e.classList.toggle("open",n),t.classList.toggle("open",n),e.setAttribute("aria-expanded",String(n)),e.setAttribute("aria-label",n?"Close navigation menu":"Open navigation menu"),t.setAttribute("aria-hidden",String(!n)),i.forEach(e=>{n?e.removeAttribute("tabindex"):e.setAttribute("tabindex","-1")})};n(!1),e.addEventListener("click",()=>{const t="true"===e.getAttribute("aria-expanded");n(!t)}),i.forEach(e=>{e.addEventListener("click",()=>{n(!1)})}),document.addEventListener("keydown",t=>{"Escape"===t.key&&"true"===e.getAttribute("aria-expanded")&&(n(!1),e.focus())}),document.addEventListener("click",i=>{"true"===e.getAttribute("aria-expanded")&&(e.contains(i.target)||t.contains(i.target)||n(!1))}),window.matchMedia("(min-width: 801px)").addEventListener("change",e=>{e.matches&&n(!1)})});
+/* skills.js - About/Skills page: hero carousel + co-curricular carousel.
+ * Menu / year / reduced-motion logic now lives in common.js. */
+(function () {
+  "use strict";
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  /* ---------- hero carousel ---------- */
+  var heroSlide = document.querySelector(".hero-slide");
+  var heroNext = document.querySelector(".hero-next");
+  var heroPrev = document.querySelector(".hero-prev");
+  var heroTimer = null;
+
+  function restartHeroAnimation() {
+    heroSlide.querySelectorAll(".hero-content").forEach(function (el) {
+      el.style.animation = "none";
+      void el.offsetHeight; // force reflow so the CSS animation restarts
+      el.style.animation = "";
+    });
+  }
+  function nextHero() {
+    var items = heroSlide.querySelectorAll(".hero-item");
+    heroSlide.appendChild(items[0]);
+    restartHeroAnimation();
+  }
+  function prevHero() {
+    var items = heroSlide.querySelectorAll(".hero-item");
+    heroSlide.prepend(items[items.length - 1]);
+    restartHeroAnimation();
+  }
+  function startHeroAutoSlide() {
+    clearInterval(heroTimer);
+    if (reduceMotion.matches) return; // WCAG 2.2.2: no auto-moving content for reduced-motion users
+    heroTimer = setInterval(nextHero, 2000);
+  }
+  if (heroSlide && heroNext && heroPrev) {
+    heroNext.addEventListener("click", function () { nextHero(); startHeroAutoSlide(); });
+    heroPrev.addEventListener("click", function () { prevHero(); startHeroAutoSlide(); });
+    startHeroAutoSlide();
+  }
+
+  /* ---------- co-curricular activity carousel ---------- */
+  var boxes = document.querySelectorAll(".activity-box");
+  var background = document.querySelector(".activity-background");
+  var titleEl = document.querySelector(".activity-title");
+  var textEl = document.querySelector(".activity-text");
+  var numberEl = document.querySelector(".activity-number");
+  var nextBtn = document.querySelector(".activity-next");
+  var prevBtn = document.querySelector(".activity-prev");
+  var activityTimer = null;
+  var current = 0;
+
+  var activities = [
+    {
+      title: "Fire Safety, Emergency Response and Rescue Training and Drill Completion Certificate",
+      text: "Fundamentals of Fire ,Responsibility of a Fire Fighter ,Electrical and Chemical Safety Principles, Use of Personal Protective Equipment (PPE), Operate Fire Fighting Equipment & Carry Out Fire Drills, Perform First Aid and Rescue Management",
+      image: "./personal-img/Fire-Safety-Emergency-Response-and-Rescue-Training-and-Drill-Completion-Certificate.webp"
+    },
+    { title: "CCTV INSTALLATION, SERVICING & MAINTENANCE", image: "./personal-img/CCTV-INSTALLATION-SERVICING-&-MAINTENANCE.webp" },
+    { title: "VDP Training- Armed", image: "./personal-img/vdp.webp" },
+    { title: "LAPTOP MOTHERBOARD REPAIR & SERVICING", image: "./personal-img/LAPTOP-MOTHERBOARD-REPAIR-&-SERVICING.webp" },
+    { title: "Fundamental Training on Self-Defense For Youths", image: "./personal-img/Fundamental-Training-on-Self-Defense-For-Youths.webp" },
+    { title: "Entrepreneurship Development Training.", image: "./personal-img/Entrepreneurship-Development-Training.webp" }
+  ];
+
+  function updateActivity(index) {
+    current = index;
+    var item = activities[current];
+    boxes.forEach(function (box, i) {
+      var active = i === current;
+      box.classList.toggle("active", active);
+      box.setAttribute("aria-pressed", String(active)); // was never updated before
+    });
+    if (background) background.style.backgroundImage = 'url("' + item.image + '")';
+    if (titleEl) titleEl.textContent = item.title;
+    if (textEl) textEl.textContent = item.text || "";
+    if (numberEl) numberEl.textContent = String(current + 1).padStart(2, "0");
+  }
+  function startActivityAutoSlide() {
+    clearInterval(activityTimer);
+    if (reduceMotion.matches) return;
+    activityTimer = setInterval(function () {
+      updateActivity((current + 1) % activities.length);
+    }, 2500);
+  }
+  function stepActivity(delta) {
+    updateActivity((current + delta + activities.length) % activities.length);
+    startActivityAutoSlide();
+  }
+
+  if (boxes.length) {
+    boxes.forEach(function (box, i) {
+      box.addEventListener("click", function () { updateActivity(i); startActivityAutoSlide(); });
+    });
+    if (nextBtn) nextBtn.addEventListener("click", function () { stepActivity(1); });
+    if (prevBtn) prevBtn.addEventListener("click", function () { stepActivity(-1); });
+    updateActivity(0);
+    startActivityAutoSlide();
+  }
+
+  /* pause timers while the tab is hidden; only restart what exists */
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      clearInterval(heroTimer);
+      clearInterval(activityTimer);
+    } else {
+      if (heroSlide && heroNext && heroPrev) startHeroAutoSlide();
+      if (boxes.length) startActivityAutoSlide();
+    }
+  });
+})();
