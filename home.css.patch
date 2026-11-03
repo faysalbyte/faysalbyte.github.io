@@ -1,0 +1,39 @@
+--- /tmp/home.css.orig	2026-10-27 23:39:43.244775740 +0000
++++ home.css	2026-10-28 04:16:38.142073670 +0000
+@@ -735,3 +735,36 @@
+ @media (prefers-reduced-motion: reduce) {
+   .rv-share-btn, .rv-toast { transition-duration: .01ms !important; }
+ }
++
++
++/* ====================================================================
++   GLOBAL STACKED SECTIONS
++   Every homepage section pins and the next one slides over it, like the hero.
++   Only active once script.js has measured the sections and added
++   body.is-stacked, so without JS the page scrolls normally.
++   - --stack-h (set per section by script.js) is the section's own height.
++   - top: min(0, viewport - height) pins a short section at the top and a
++     tall section at its BOTTOM edge, so tall content is always fully readable
++     before the next section covers it (no cut-off).
++   - 100dvh follows the mobile browser toolbar; 100vh is the fallback.
++   ==================================================================== */
++body.home.is-stacked .page-body { display: contents; }   /* About joins the same stack as the other sections */
++
++body.home.is-stacked main > section:not(.hero),
++body.home.is-stacked .page-body > section {
++  position: sticky;
++  z-index: 1;                                   /* later sections paint above earlier ones */
++  top: min(0px, calc(100vh - var(--stack-h)));
++  top: min(0px, calc(100dvh - var(--stack-h)));
++}
++
++/* footer slides over the last section too (spacer keeps that section pinned while it passes) */
++body.home.is-stacked main::after { content: ""; display: block; height: var(--footer-h, 0px); }
++body.home.is-stacked .site-footer { z-index: 2; margin-top: calc(var(--footer-h, 0px) * -1); }
++
++@media print {
++  body.home.is-stacked main > section:not(.hero),
++  body.home.is-stacked .page-body > section { position: static; }
++  body.home.is-stacked main::after { display: none; }
++  body.home.is-stacked .site-footer { margin-top: 0; }
++}

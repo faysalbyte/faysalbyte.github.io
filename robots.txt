@@ -1,0 +1,73 @@
+# robots.txt for https://faysalbyte.github.io/
+# NOTE: crawlers only read robots.txt at the host root, so this file must stay in the repo root.
+
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /server-config/
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Social preview crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Pinterestbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# AI search / answer-engine crawlers: allowed on purpose so the site can be
+# cited by AI assistants (GEO / LLMO / AEO). Change Allow to Disallow to opt out.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://faysalbyte.github.io/sitemap.xml

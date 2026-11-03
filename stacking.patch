@@ -1,0 +1,139 @@
+--- home.css	2026-10-28 05:04:02.000000000 +0000
++++ /home/claude/site/faysalbyte.github.io-main/home.css	2026-10-27 23:20:45.381008416 +0000
+@@ -735,3 +735,35 @@
+ @media (prefers-reduced-motion: reduce) {
+   .rv-share-btn, .rv-toast { transition-duration: .01ms !important; }
+ }
++
++
++/* ====================================================================
++   SECTION STACK - every homepage section pins and the next one slides up
++   over it (the hero already does this). --stack-top is set per section by
++   script.js (section 9): 0 for short sections, (viewport - height) for tall
++   ones so their whole content is readable before they are covered.
++   Sticky is composited by the browser, so no scroll handler is involved.
++   Deliberately NO transform / will-change on the sections: either would
++   make them the containing block of the fixed .rv-toast and break it.
++   ==================================================================== */
++.page-body { isolation: isolate; }
++.page-body > section {
++  position: sticky;
++  top: var(--stack-top, 0px);
++  box-shadow: 0 -1px 0 rgba(0, 0, 0, .06), 0 -28px 60px -34px rgba(0, 0, 0, .45);
++}
++/* later sections paint over earlier ones */
++.page-body > section:nth-child(1) { z-index: 1; }
++.page-body > section:nth-child(2) { z-index: 2; }
++.page-body > section:nth-child(3) { z-index: 3; }
++.page-body > section:nth-child(4) { z-index: 4; }
++.page-body > section:nth-child(5) { z-index: 5; }
++.page-body > section:nth-child(6) { z-index: 6; }
++.page-body > section:nth-child(7) { z-index: 7; }
++.page-body > section:nth-child(8) { z-index: 8; }
++.page-body > section:nth-child(n+9) { z-index: 9; }
++
++/* safety nets: no stacking where it can't work or isn't wanted */
++@media (max-height: 460px), print {
++  .page-body > section { position: relative; top: auto; box-shadow: none; z-index: auto; }
++}
+--- script.js	2026-10-28 05:04:02.000000000 +0000
++++ /home/claude/site/faysalbyte.github.io-main/script.js	2026-10-27 23:20:45.378596963 +0000
+@@ -104,6 +104,18 @@
+     }
+   }
+ 
++  /* ---------- sticky-stack helpers (see section 9) ----------
++     natural = where a section sits in normal flow; sticky pins move it away
++     from there, so measurements and anchor jumps must use the natural spot. */
++  function naturalTop(sec, y) {
++    var top = sec.parentElement.getBoundingClientRect().top + y;
++    for (var s = sec.previousElementSibling; s; s = s.previousElementSibling) top += s.offsetHeight;
++    return top;
++  }
++  function stackShift(sec, y) {
++    return sec ? sec.getBoundingClientRect().top + y - naturalTop(sec, y) : 0;
++  }
++
+   var m = { heroH: 0, lineTop: 0, lineH: 1 };
+   var heroCovered = false;
+   var currentIndex = -1;
+@@ -115,14 +127,15 @@
+     var y = window.pageYOffset || root.scrollTop;
+     if (hero) m.heroH = hero.offsetHeight || window.innerHeight;
+     if (path && line) {
++      var shift = stackShift(path.closest(".page-body > section"), y);
+       var lineRect = line.getBoundingClientRect();
+-      m.lineTop = lineRect.top + y;
++      m.lineTop = lineRect.top + y - shift;
+       m.lineH = Math.max(1, lineRect.height);
+       items.forEach(function (item) {
+         var rect = item.el.getBoundingClientRect();
+-        item.top = rect.top + y;
+-        item.bottom = rect.bottom + y;
+-        item.node = rect.top + y + item.nodeEl.offsetTop + item.nodeEl.offsetHeight / 2;
++        item.top = rect.top + y - shift;
++        item.bottom = rect.bottom + y - shift;
++        item.node = rect.top + y - shift + item.nodeEl.offsetTop + item.nodeEl.offsetHeight / 2;
+       });
+     }
+   }
+@@ -385,4 +398,59 @@
+   } else {
+     init();
+   }
++  /* ---------- 9. global sticky card-stack ----------
++     CSS (home.css, "SECTION STACK") makes every .page-body > section sticky.
++     A section taller than the screen must NOT pin at top:0 (its lower half
++     would be hidden), so each one pins when its BOTTOM meets the screen
++     bottom: top = viewportHeight - sectionHeight (negative). Short sections
++     pin at 0. The next section then slides over it. */
++  (function stack() {
++    var sections = $$(".page-body > section");
++    if (!sections.length) return;
++    var queued = false;
++    var last = [];
++
++    function apply() {
++      queued = false;
++      var vh = root.clientHeight || window.innerHeight;
++      for (var i = 0; i < sections.length; i++) {
++        var top = Math.min(0, Math.round(vh - sections[i].offsetHeight));
++        if (last[i] !== top) { last[i] = top; sections[i].style.setProperty("--stack-top", top + "px"); }
++      }
++    }
++    function request() { if (!queued) { queued = true; requestAnimationFrame(apply); } }
++
++    apply();
++    window.addEventListener("resize", request, { passive: true });
++    window.addEventListener("orientationchange", request);
++    window.addEventListener("load", request);
++    window.addEventListener("pageshow", request);
++    if (document.fonts && document.fonts.ready) document.fonts.ready.then(request);
++    if ("ResizeObserver" in window) {
++      var ro = new ResizeObserver(request);
++      sections.forEach(function (sec) { ro.observe(sec); });
++    }
++
++    /* in-page links: jump to the section's natural position, not its pinned one */
++    function goTo(id, smooth) {
++      var sec = id && document.getElementById(id);
++      if (!sec) return false;
++      var host = sec.closest(".page-body > section");
++      if (!host) return false;
++      var y = window.pageYOffset || root.scrollTop;
++      var navH = parseFloat(getComputedStyle(document.body).getPropertyValue("--nav-h")) || 76;
++      var target = naturalTop(host, y) - navH + 1 + (sec === host ? 0 : sec.getBoundingClientRect().top + y - host.getBoundingClientRect().top);
++      window.scrollTo({ top: Math.max(0, target), behavior: smooth && !motion.matches ? "smooth" : "auto" });
++      return true;
++    }
++    document.addEventListener("click", function (e) {
++      var a = e.target.closest && e.target.closest("a[href^=\"#\"]");
++      if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
++      var id = decodeURIComponent(a.getAttribute("href").slice(1));
++      if (goTo(id, true)) { e.preventDefault(); history.pushState(null, "", "#" + id); }
++    });
++    window.addEventListener("load", function () {
++      if (location.hash.length > 1) goTo(decodeURIComponent(location.hash.slice(1)), false);
++    });
++  })();
+ })();

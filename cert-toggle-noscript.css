@@ -1,0 +1,3 @@
+/* loaded only inside <noscript>: without JS the full text shows and the button is hidden */
+.cert-body .cert-desc { display: block; -webkit-line-clamp: unset; line-clamp: unset; }
+.cert-toggle { display: none; }

@@ -1,0 +1,16 @@
+# Netlify / Cloudflare Pages. GitHub Pages ignores this file (it cannot send custom headers).
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://faysalbyte-ai-backend.vercel.app; style-src 'self' https://faysalbyte-ai-backend.vercel.app https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https://cdn-icons-png.flaticon.com https://*.google.com https://*.gstatic.com; media-src 'self'; frame-src https://www.google.com; form-action 'self'; connect-src 'self' https://faysalbyte-ai-backend.vercel.app; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(self), geolocation=(), payment=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable

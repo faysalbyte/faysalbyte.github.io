@@ -1,0 +1,45 @@
+# MD Faysal Hossain
+
+> MD Faysal Hossain is a certified MERN Stack Developer, web designer, SEO expert and NSDA-certified trainer based in Dhaka, Bangladesh. He builds React.js / Node.js / MongoDB applications, eCommerce and CMS websites, and teaches web design and freelancing skills. Available for remote projects in the USA, UK, Canada, Australia and Europe.
+
+Key facts: name "MD Faysal Hossain" (also "FaysalByte"); location Dhaka, Bangladesh; languages: English, Bengali; contact via the website form, email or WhatsApp.
+
+## Main pages
+
+- [Home](https://faysalbyte.github.io/): Overview, roles and certifications
+- [Skills & Certifications](https://faysalbyte.github.io/skills): NSDA certificates, technical skills and training activities
+- [Portfolio](https://faysalbyte.github.io/portfolio): Selected projects in vanilla CSS, Bootstrap, Tailwind CSS, JavaScript and GSAP
+- [Contact](https://faysalbyte.github.io/contact): Contact form, WhatsApp, email, map and Google reviews
+
+## Services
+
+- MERN stack development (MongoDB, Express.js, React.js, Node.js)
+- Web design and responsive front-end development
+- eCommerce and CMS development (Shopify, WordPress, Wix, Webflow, Squarespace)
+- SEO and digital marketing
+- Android app development with Kotlin
+- Web design and freelancing training (NSDA certified trainer)
+
+## Certifications
+
+- NSDA Level-3 and Level-5 Web Design and Web Development for Freelancing
+- NSDA Level-4 Android App Development with Kotlin
+- NSDA Level-4 Web Application Development with Python
+- NSDA Level-3 and Level-4 Digital Marketing for Freelancing (SEO)
+- NSDA Level-3 Software Quality Assurance
+- Industrial MERN Stack Certification (Daffodil International Professional Training Institute)
+
+## Profiles
+
+- [LinkedIn](https://bd.linkedin.com/in/faysalbyte)
+- [GitHub](https://github.com/faysalbyte)
+- [YouTube](https://www.youtube.com/@md.faysal.hossain)
+- [Google Maps](https://maps.app.goo.gl/td2HsgJeBrUZF9W19)
+- [Leave a Google review](https://g.page/r/CWAiqghQZkkaEBI/review)
+
+## Optional
+
+- [AI & SEO Information](https://faysalbyte.github.io/ai-info): Notes on AI, SEO and modern web development
+- [Entity Map](https://faysalbyte.github.io/entity-map): Skills and technologies as a knowledge graph
+- [Privacy Policy](https://faysalbyte.github.io/privacy)
+- [Terms of Service](https://faysalbyte.github.io/terms)

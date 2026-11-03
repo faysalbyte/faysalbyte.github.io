@@ -1,0 +1,102 @@
+--- /tmp/script.js.orig	2026-10-27 23:39:43.246839827 +0000
++++ script.js	2026-10-28 04:16:38.190657350 +0000
+@@ -104,6 +104,80 @@
+     }
+   }
+ 
++  /* ---------- global stacked sections (pairs with the "GLOBAL STACKED SECTIONS" CSS) ---------- */
++  var main = $("#main");
++  var footer = $(".site-footer");
++  var layers = main && document.body.classList.contains("home")
++    ? $$("#main > section, #main > .page-body > section") : [];
++  var secs = layers.filter(function (el) { return el !== hero; });
++  var stackOn = false;
++  var stackH = [];
++  var stackFooterH = -1;
++  var stackQueued = false;
++
++  function pageY() { return window.pageYOffset || root.scrollTop; }
++
++  /* where a section sits in normal flow (ignores any sticky offset) */
++  function naturalTop(el) {
++    var top = main.getBoundingClientRect().top + pageY();
++    for (var i = 0; i < layers.length && layers[i] !== el; i++) top += layers[i].getBoundingClientRect().height;
++    return top;
++  }
++  /* how far sticky has pushed a section away from its normal position */
++  function stackShift(el) {
++    return stackOn && el ? el.getBoundingClientRect().top + pageY() - naturalTop(el) : 0;
++  }
++
++  function stackMeasure() {
++    stackQueued = false;
++    if (!secs.length) return;
++    var hs = secs.map(function (el) { return Math.floor(el.getBoundingClientRect().height); });   /* reads first... */
++    var fh = footer ? footer.getBoundingClientRect().height : 0;
++    hs.forEach(function (h, i) {                                                                  /* ...then writes */
++      if (stackH[i] !== h) { stackH[i] = h; secs[i].style.setProperty("--stack-h", h + "px"); }
++    });
++    if (fh !== stackFooterH) { stackFooterH = fh; document.body.style.setProperty("--footer-h", fh + "px"); }
++    if (!stackOn) { stackOn = true; document.body.classList.add("is-stacked"); }
++  }
++  function requestStackMeasure() {
++    if (stackQueued) return;
++    stackQueued = true;
++    requestAnimationFrame(stackMeasure);
++  }
++
++  if (secs.length) {
++    stackMeasure();
++    window.addEventListener("resize", requestStackMeasure, { passive: true });
++    window.addEventListener("load", requestStackMeasure);
++    window.addEventListener("pageshow", requestStackMeasure);
++    if (document.fonts && document.fonts.ready) document.fonts.ready.then(requestStackMeasure);
++    if ("ResizeObserver" in window) {
++      var stackRO = new ResizeObserver(requestStackMeasure);
++      secs.forEach(function (el) { stackRO.observe(el); });
++      if (footer) stackRO.observe(footer);
++    }
++
++    /* keyboard focus on something hidden under a later section: bring it back into view */
++    document.addEventListener("focusin", function (event) {
++      var target = event.target;
++      requestAnimationFrame(function () {
++        if (!stackOn || !target || !target.getBoundingClientRect) return;
++        var sec = secs.filter(function (el) { return el.contains(target); })[0];
++        if (!sec) return;
++        var r = target.getBoundingClientRect();
++        var cy = r.top + r.height / 2;
++        if (cy > window.innerHeight) return;                       /* below the screen: the browser scrolls normally */
++        if (cy >= 0) {
++          var hit = document.elementFromPoint(r.left + r.width / 2, cy);
++          if (hit && sec.contains(hit)) return;                    /* already visible */
++        }
++        var nat = naturalTop(sec) + (r.top - sec.getBoundingClientRect().top);
++        window.scrollTo({ top: Math.max(0, nat - window.innerHeight * 0.4), behavior: "instant" });
++      });
++    });
++  }
++  var journeySec = path ? path.closest("section") : null;
++
+   var m = { heroH: 0, lineTop: 0, lineH: 1 };
+   var heroCovered = false;
+   var currentIndex = -1;
+@@ -116,13 +190,14 @@
+     if (hero) m.heroH = hero.offsetHeight || window.innerHeight;
+     if (path && line) {
+       var lineRect = line.getBoundingClientRect();
+-      m.lineTop = lineRect.top + y;
++      var shift = stackShift(journeySec);   /* undo any sticky offset so positions stay in page coordinates */
++      m.lineTop = lineRect.top + y - shift;
+       m.lineH = Math.max(1, lineRect.height);
+       items.forEach(function (item) {
+         var rect = item.el.getBoundingClientRect();
+-        item.top = rect.top + y;
+-        item.bottom = rect.bottom + y;
+-        item.node = rect.top + y + item.nodeEl.offsetTop + item.nodeEl.offsetHeight / 2;
++        item.top = rect.top + y - shift;
++        item.bottom = rect.bottom + y - shift;
++        item.node = rect.top + y - shift + item.nodeEl.offsetTop + item.nodeEl.offsetHeight / 2;
+       });
+     }
+   }

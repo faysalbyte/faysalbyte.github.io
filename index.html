@@ -1,0 +1,975 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src &#x27;self&#x27;; script-src &#x27;self&#x27; https://faysalbyte-ai-backend.vercel.app; style-src &#x27;self&#x27; https://faysalbyte-ai-backend.vercel.app https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src &#x27;self&#x27; https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src &#x27;self&#x27; data: https://images.unsplash.com https://cdn-icons-png.flaticon.com https://*.google.com https://*.gstatic.com; media-src &#x27;self&#x27;; frame-src https://www.google.com; form-action &#x27;self&#x27;; connect-src &#x27;self&#x27; https://faysalbyte-ai-backend.vercel.app; base-uri &#x27;self&#x27;; object-src &#x27;none&#x27;; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>MD Faysal Hossain | MERN Stack Developer &amp; Trainer</title>
+  <meta name="description"
+    content="Certified MERN Stack Developer, web designer, SEO expert and NSDA trainer in Dhaka. React, Node.js, MongoDB, eCommerce and CMS for remote clients worldwide.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot-news" content="index, follow">
+  <meta name="googlebot-image" content="index, follow">
+  <meta name="googlebot-video" content="index, follow, max-video-preview:-1">
+  <meta name="author" content="MD Faysal Hossain">
+  <meta name="rating" content="general">
+  <meta name="application-name" content="MD Faysal Hossain | Portfolio">
+  <meta name="apple-mobile-web-app-title" content="MD Faysal Hossain">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="msapplication-TileColor" content="#0a0a0a">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <meta name="keywords"
+    content="MERN Stack Developer, Web Designer, Web Developer, SEO Expert, Freelance Developer, React.js, Node.js, MongoDB, Express.js, Tailwind CSS, Bootstrap, WordPress, Shopify, Wix, Ecommerce Developer, CMS Developer, Digital Marketing, NSDA Certified, Dhaka, Bangladesh, Remote Developer, USA, UK, Canada, Australia, Europe">
+  <meta name="google-site-verification" content="woQ5ZlCoSW65sKqDOtWwidFSk_nDw0tGbM-BUpJoo6g">
+  <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
+  <link rel="canonical" href="https://faysalbyte.github.io/">
+  <link rel="alternate" hreflang="en" href="https://faysalbyte.github.io/">
+  <link rel="alternate" hreflang="x-default" href="https://faysalbyte.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://faysalbyte.github.io/">
+  <meta property="og:title" content="MD Faysal Hossain | MERN Stack Developer &amp; Trainer">
+  <meta property="og:description"
+    content="Certified MERN Stack Developer, web designer, SEO expert and NSDA trainer in Dhaka. React, Node.js, MongoDB, eCommerce and CMS for remote clients worldwide.">
+  <meta property="og:site_name" content="MD Faysal Hossain | Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image"
+    content="https://faysalbyte.github.io/social/md-faysal-hossain-og-home.jpg">
+  <meta property="og:image:secure_url"
+    content="https://faysalbyte.github.io/social/md-faysal-hossain-og-home.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="MD Faysal Hossain - MERN Stack Developer, Web Designer and SEO Expert">
+  <meta property="profile:first_name" content="Faysal">
+  <meta property="profile:last_name" content="Hossain">
+  <meta property="profile:username" content="faysalbyte">
+  <meta property="profile:gender" content="male">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@faysalbyte">
+  <meta name="twitter:creator" content="@faysalbyte">
+  <meta name="twitter:title" content="MD Faysal Hossain | MERN Stack Developer &amp; Trainer">
+  <meta name="twitter:description"
+    content="Certified MERN Stack Developer, web designer, SEO expert and NSDA trainer in Dhaka. React, Node.js, MongoDB, eCommerce and CMS for remote clients worldwide.">
+  <meta name="twitter:image"
+    content="https://faysalbyte.github.io/social/md-faysal-hossain-og-home.jpg">
+  <meta name="twitter:image:alt" content="MD Faysal Hossain - MERN Stack Developer">
+  <meta name="pinterest-rich-pin" content="true">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="icons/md-faysal-hossain-favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/md-faysal-hossain-favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/md-faysal-hossain-favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/md-faysal-hossain-apple-touch-icon.png">
+  <link rel="mask-icon" href="icons/md-faysal-hossain-safari-pinned-tab.svg" color="#e95b24">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="alternate" type="text/plain" href="https://faysalbyte.github.io/llms.txt"
+    title="LLM-readable site summary">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image"
+    href="personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait-960.webp"
+    type="image/webp"
+    imagesrcset="personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait-640.webp 640w, personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait-960.webp 960w, personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait.webp 1254w"
+    imagesizes="(max-aspect-ratio: 1/1) 100vw, 100vh" fetchpriority="high">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    media="print" data-defer-css>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print"
+    data-defer-css crossorigin="anonymous" referrerpolicy="no-referrer"><noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+  </noscript>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+  <script
+    type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://faysalbyte.github.io/#person","name":"MD Faysal Hossain","alternateName":"FaysalByte","url":"https://faysalbyte.github.io/","image":"https://faysalbyte.github.io/social/md-faysal-hossain-og-home.jpg","jobTitle":"MERN Stack Developer & Web Design Trainer","description":"Certified MERN Stack Developer, Web Designer, SEO Expert and NSDA Certified Trainer based in Dhaka, Bangladesh, available for remote projects worldwide.","email":"mailto:md.faysal.hossain.moti.bddh@gmail.com","telephone":"+8801595530901","knowsAbout":["MERN Stack Development","React.js","Node.js","MongoDB","Express.js","Tailwind CSS","Bootstrap","WordPress","Shopify","Wix","Ecommerce Development","CMS Development","SEO","Digital Marketing","Web Design","Web Development","Full Stack Development","Frontend Development","Backend Development","API Development","Responsive Web Design","UI/UX Design","Python Development","Android Development"],"hasCredential":[{"@type":"EducationalOccupationalCredential","credentialCategory":"NSDA Level-3 Web Design & Development","recognizedBy":{"@type":"Organization","name":"National Skills Development Authority (NSDA)"}},{"@type":"EducationalOccupationalCredential","credentialCategory":"NSDA Level-4 Android App Development with Kotlin","recognizedBy":{"@type":"Organization","name":"National Skills Development Authority (NSDA)"}},{"@type":"EducationalOccupationalCredential","credentialCategory":"NSDA Level-4 Web Application Development with Python","recognizedBy":{"@type":"Organization","name":"National Skills Development Authority (NSDA)"}},{"@type":"EducationalOccupationalCredential","credentialCategory":"Industrial MERN Stack Certification","recognizedBy":{"@type":"Organization","name":"Daffodil International Professional Training Institute"}}],"address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"worksFor":{"@type":"Organization","name":"Freelance"},"sameAs":["https://bd.linkedin.com/in/faysalbyte","https://github.com/faysalbyte","https://x.com/faysalbyte","https://www.facebook.com/faysalbyte","https://www.instagram.com/faysalbyte/","https://www.youtube.com/@md.faysal.hossain","https://www.pinterest.com/faysalbyte/","https://www.tiktok.com/@faysalbyte","https://share.google/W5Fhmr1ncuTILC7j5","https://maps.app.goo.gl/td2HsgJeBrUZF9W19"]},{"@type":"ProfessionalService","@id":"https://faysalbyte.github.io/#service","name":"MD Faysal Hossain - MERN Stack Developer","url":"https://faysalbyte.github.io/","image":"https://faysalbyte.github.io/social/md-faysal-hossain-og-home.jpg","logo":"https://faysalbyte.github.io/icons/md-faysal-hossain-web-app-icon-512.png","description":"Web development, eCommerce, CMS, SEO and training services for remote clients in the USA, UK, Canada, Australia and Europe.","founder":{"@id":"https://faysalbyte.github.io/#person"},"telephone":"+8801595530901","email":"md.faysal.hossain.moti.bddh@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"geo":{"@type":"GeoCoordinates","latitude":23.721564227607438,"longitude":90.42476544331136},"hasMap":"https://maps.app.goo.gl/td2HsgJeBrUZF9W19","areaServed":"Worldwide","sameAs":["https://bd.linkedin.com/in/faysalbyte","https://github.com/faysalbyte","https://x.com/faysalbyte","https://www.facebook.com/faysalbyte","https://www.instagram.com/faysalbyte/","https://www.youtube.com/@md.faysal.hossain","https://www.pinterest.com/faysalbyte/","https://www.tiktok.com/@faysalbyte","https://share.google/W5Fhmr1ncuTILC7j5","https://maps.app.goo.gl/td2HsgJeBrUZF9W19"],"potentialAction":{"@type":"ReviewAction","target":"https://g.page/r/CWAiqghQZkkaEBI/review"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Web Development Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"MERN Stack Development","description":"Full-stack web development using MongoDB, Express.js, React.js, and Node.js"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ecommerce Development","description":"Custom ecommerce platforms with Shopify, WooCommerce, and payment gateway integration"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"CMS Development","description":"Custom WordPress, Wix, and Shopify CMS solutions"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO Optimization","description":"On-page SEO, technical SEO, and digital marketing strategies"}}]}},{"@type":"WebSite","@id":"https://faysalbyte.github.io/#website","name":"MD Faysal Hossain | Portfolio","url":"https://faysalbyte.github.io/","inLanguage":"en","author":{"@id":"https://faysalbyte.github.io/#person"},"publisher":{"@id":"https://faysalbyte.github.io/#person"}},{"@type":"ProfilePage","@id":"https://faysalbyte.github.io/#webpage","url":"https://faysalbyte.github.io/","name":"MD Faysal Hossain | MERN Stack Developer & Trainer","description":"Certified MERN Stack Developer, web designer, SEO expert and NSDA trainer in Dhaka. React, Node.js, MongoDB, eCommerce and CMS for remote clients worldwide.","inLanguage":"en","isPartOf":{"@id":"https://faysalbyte.github.io/#website"},"about":{"@id":"https://faysalbyte.github.io/#person"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://faysalbyte.github.io/social/md-faysal-hossain-og-home.jpg","width":1200,"height":630},"speakable":{"@type":"SpeakableSpecification","cssSelector":["h1","main p"]},"mainEntity":{"@id":"https://faysalbyte.github.io/#person"}}]}</script>
+<link rel="stylesheet" href="enhance.css">
+<link rel="stylesheet" href="skeleton.css">
+<link rel="stylesheet" href="cert-toggle.css">
+<noscript><link rel="stylesheet" href="cert-toggle-noscript.css"></noscript></head>
+
+<body class="home"><a class="skip-link" href="#main">Skip to main content</a>
+  <nav class="navbar" aria-label="Main navigation"><a class="brand" href="/" aria-label="Faysal home">Faysal<span
+        class="brand-dots" aria-hidden="true">..</span></a>
+    <div role="group" class="nav-links" aria-label="Primary navigation"><a href="/" class="active"
+        aria-current="page">Home</a><a href="skills">About</a><a href="portfolio">Portfolio</a><a
+        href="contact">Contact</a></div><button type="button" class="menu-button" id="menuButton"
+      aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu"><span
+        aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+  </nav>
+  <div role="group" class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" aria-hidden="true"><a href="/"
+      aria-current="page">Home</a><a href="skills">About</a><a href="portfolio">Portfolio</a><a
+      href="contact">Contact</a></div>
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <div class="hero-photo"><img
+            src="./personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait.webp"
+            srcset="./personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait-640.webp 640w, ./personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait-960.webp 960w, ./personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait.webp 1254w"
+            sizes="(max-aspect-ratio: 1/1) 100vw, 100vh" width="1254" height="1254"
+            alt="MD Faysal Hossain, MERN Stack Developer" fetchpriority="high" decoding="async"></div>
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-where">Based in Dhaka, Bangladesh. Working remotely with clients worldwide.</p>
+        <h1 id="hero-title"><span class="h1-line">MD Faysal</span><span class="h1-line">Hossain</span></h1>
+        <p class="hero-role">Certified MERN stack developer, web designer and<a href="https://nsda.gov.bd/"
+            target="_blank" rel="noopener noreferrer">NSDA trainer</a></p>
+        <p class="hero-lede">SEO-ready, accessible websites and web apps built with React.js, Node.js and MongoDB for
+          clients in the USA, UK, Canada, Australia and Europe.</p>
+        <p class="hero-build"><span class="hero-build-label">I build</span><span class="ticker" aria-hidden="true"><span
+              id="typing">MERN stack applications</span><span class="caret"></span></span><span class="sr-only">MERN
+            stack applications, responsive websites, eCommerce Websites, SEO (Search Engine Optimization)-ready pages, AEO (Answer Engine Optimization)-ready pages, GEO (Generative Engine Optimization)-ready pages, AIO (AI Optimization / Artificial Intelligence Optimization)-ready pages, SERP ranking (Search Engine Results Page ranking)-ready pages, Strictly secure web application, Android apps and training
+            programs.</span></p>
+        <div class="hero-actions"><a class="btn btn-primary" href="contact">Start a project</a><a class="btn btn-ghost"
+            href="portfolio">View portfolio</a></div>
+      </div>      <div class="sx-hero" id="sx-hero" aria-hidden="true">
+        <div class="sx-hero-media">
+          <svg class="sx-hero-svg" viewBox="0 0 1254 1254" preserveAspectRatio="xMidYMin slice" focusable="false">
+            <path class="sx-ghost" pathLength="1" d="M414 1195 L402 1189 L389 1183 L376 1177 L364 1170 L352 1163 L340 1155 L331 1144 L326 1131 L324 1117 L324 1103 L325 1089 L327 1075 L328 1061 L330 1047 L333 1033 L336 1019 L339 1006 L342 992 L344 978 L344 964 L343 950 L342 936 L342 921 L343 907 L344 893 L345 879 L346 865 L347 851 L349 837 L351 823 L354 809 L358 796 L363 783 L370 770 L378 759 L387 748 L398 739 L410 731 L422 724 L434 717 L446 710 L459 703 L470 695 L483 688 L495 681 L507 674 L517 665 L524 652 L529 639 L527 625 L519 613 L510 603 L502 591 L495 579 L488 567 L483 553 L479 540 L476 526 L474 512 L470 499 L467 485 L463 471 L461 457 L459 443 L457 429 L456 415 L455 401 L456 387 L459 373 L459 359 L458 345 L455 331 L451 318 L447 305 L440 292 L436 278 L436 264 L440 251 L446 238 L450 224 L454 211 L459 198 L466 186 L475 174 L485 164 L496 156 L509 149 L520 142 L532 134 L545 128 L558 121 L571 116 L584 113 L598 110 L612 107 L626 106 L640 106 L654 109 L668 113 L681 117 L694 121 L707 128 L719 135 L732 141 L743 149 L754 159 L764 169 L774 179 L784 189 L794 199 L804 209 L812 220 L817 233 L821 247 L824 260 L824 275 L823 289 L819 302 L814 315 L809 328 L801 341 L796 354 L796 368 L803 380 L814 388 L818 401 L818 415 L816 429 L812 443 L808 457 L803 470 L796 482 L787 492 L776 501 L767 512 L763 525 L762 539 L760 554 L762 567 L770 579 L779 590 L786 602 L793 614 L800 626 L808 638 L816 650 L826 660 L838 668 L849 676 L861 684 L872 693 L883 701 L895 709 L907 717 L918 725 L930 733 L942 741 L954 748 L965 756 L977 764 L989 771 L1001 779 L1013 787 L1025 795 L1036 802 L1048 810 L1059 819 L1068 830 L1075 842 L1081 855 L1086 868 L1089 882 L1091 896 L1092 910 L1092 924 L1091 938 L1090 952 L1089 966 L1085 980 L1081 993 L1075 1006 L1069 1019 L1061 1031 L1053 1042 L1043 1052 L1032 1062 L1022 1072 L1012 1082 L1002 1092 L992 1102 L982 1112 L972 1122 L962 1132 L952 1141 L942 1151 L930 1159 L919 1167 L907 1175 L895 1183 L883 1189 L870 1195"/>
+            <path class="sx-trace" pathLength="1" d="M414 1195 L402 1189 L389 1183 L376 1177 L364 1170 L352 1163 L340 1155 L331 1144 L326 1131 L324 1117 L324 1103 L325 1089 L327 1075 L328 1061 L330 1047 L333 1033 L336 1019 L339 1006 L342 992 L344 978 L344 964 L343 950 L342 936 L342 921 L343 907 L344 893 L345 879 L346 865 L347 851 L349 837 L351 823 L354 809 L358 796 L363 783 L370 770 L378 759 L387 748 L398 739 L410 731 L422 724 L434 717 L446 710 L459 703 L470 695 L483 688 L495 681 L507 674 L517 665 L524 652 L529 639 L527 625 L519 613 L510 603 L502 591 L495 579 L488 567 L483 553 L479 540 L476 526 L474 512 L470 499 L467 485 L463 471 L461 457 L459 443 L457 429 L456 415 L455 401 L456 387 L459 373 L459 359 L458 345 L455 331 L451 318 L447 305 L440 292 L436 278 L436 264 L440 251 L446 238 L450 224 L454 211 L459 198 L466 186 L475 174 L485 164 L496 156 L509 149 L520 142 L532 134 L545 128 L558 121 L571 116 L584 113 L598 110 L612 107 L626 106 L640 106 L654 109 L668 113 L681 117 L694 121 L707 128 L719 135 L732 141 L743 149 L754 159 L764 169 L774 179 L784 189 L794 199 L804 209 L812 220 L817 233 L821 247 L824 260 L824 275 L823 289 L819 302 L814 315 L809 328 L801 341 L796 354 L796 368 L803 380 L814 388 L818 401 L818 415 L816 429 L812 443 L808 457 L803 470 L796 482 L787 492 L776 501 L767 512 L763 525 L762 539 L760 554 L762 567 L770 579 L779 590 L786 602 L793 614 L800 626 L808 638 L816 650 L826 660 L838 668 L849 676 L861 684 L872 693 L883 701 L895 709 L907 717 L918 725 L930 733 L942 741 L954 748 L965 756 L977 764 L989 771 L1001 779 L1013 787 L1025 795 L1036 802 L1048 810 L1059 819 L1068 830 L1075 842 L1081 855 L1086 868 L1089 882 L1091 896 L1092 910 L1092 924 L1091 938 L1090 952 L1089 966 L1085 980 L1081 993 L1075 1006 L1069 1019 L1061 1031 L1053 1042 L1043 1052 L1032 1062 L1022 1072 L1012 1082 L1002 1092 L992 1102 L982 1112 L972 1122 L962 1132 L952 1141 L942 1151 L930 1159 L919 1167 L907 1175 L895 1183 L883 1189 L870 1195"/>
+          </svg>
+        </div>
+        <div class="sx-hero-name"><span class="sx-line sx-en">MD FAYSAL HOSSAIN</span><span class="sx-line sx-bn" lang="bn">এমডি ফয়সাল</span></div>
+      </div><a class="scroll-cue" href="#journey"><span>Scroll to follow my skills path</span><span
+          class="scroll-cue-line" aria-hidden="true"></span></a>
+    </section>
+    <div class="page-body">
+      <section class="about theme-light" id="about" aria-labelledby="about-title">
+        <div class="wrap about-grid">
+          <div class="about-text">
+            <h2 id="about-title">Who is MD Faysal Hossain?</h2>
+            <p class="lead">MD Faysal Hossain, also known as FaysalByte, is a certified MERN Stack developer, web
+              designer, SEO expert and<a href="https://nsda.gov.bd/" target="_blank"
+                rel="noopener noreferrer">NSDA-certified</a>trainer based in Dhaka, Bangladesh.</p>
+            <p>He builds React.js, Node.js and MongoDB applications, eCommerce and CMS websites, and teaches web design
+              and freelancing skills. His work focuses on industry-oriented skills and practical solutions, from
+              software quality assurance and Android development to search-friendly, accessible interfaces.</p>
+            <dl class="facts">
+              <div>
+                <dt>Name</dt>
+                <dd>MD Faysal Hossain (FaysalByte)</dd>
+              </div>
+              <div>
+                <dt>Roles</dt>
+                <dd>MERN stack developer, web designer, SEO expert, trainer</dd>
+              </div>
+              <div>
+                <dt>Location</dt>
+                <dd>Dhaka, Bangladesh</dd>
+              </div>
+              <div>
+                <dt>Works with</dt>
+                <dd>Remote clients</dd>
+              </div>
+              <div>
+                <dt>Languages</dt>
+                <dd>English and Bengali</dd>
+              </div>
+            </dl>
+            <p class="inline-links"><a class="text-link" href="skills">See all skills and activities</a><a
+                class="text-link" href="contact">Get in touch</a></p>
+          </div>
+          <figure class="portrait career">
+            <div class="portrait-card"><img
+                src="./personal-img/md-faysal-hossain-mern-stack-developer-career-professional-portrait.webp"
+                srcset="./personal-img/md-faysal-hossain-mern-stack-developer-career-professional-portrait-640.webp 640w, ./personal-img/md-faysal-hossain-mern-stack-developer-career-professional-portrait.webp 864w"
+                sizes="(max-width: 900px) 80vw, 380px" width="864" height="953"
+                alt="Portrait of MD Faysal Hossain in a white shirt and light blue vest" loading="lazy"
+                decoding="async"></div>
+        </div>
+    </div>
+    <section id="ai-voice-assistant-root" class="theme-dark"><noscript><p>I am Faisal (MD Faysal Hossain), a certified MERN stack developer and web designer in Dhaka, Bangladesh. Contact me about my skills, services and projects through the contact page, by email at md.faysal.hossain.moti.bddh@gmail.com or on WhatsApp at +880 1595 530901.</p></noscript></section>
+
+    <section class="trainer theme-light" id="trainer" aria-labelledby="trainer-title">
+      <div class="wrap">
+        <header class="section-head"><span class="sx-eyebrow">Experience</span>
+          <h2 id="trainer-title">Training experience</h2>
+          <p>Hands-on, competency-based training that helps learners become job-ready freelancers.</p>
+        </header>
+        <div class="exp-list">
+           <article class="exp-card">
+          <figure class="exp-media"><video class="exp-video" data-bg-video data-src-mp4="videos/trainer-level-5.mp4" poster="personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait-640.webp" width="640" height="640" autoplay loop muted playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate noremoteplayback nofullscreen" tabindex="-1" role="img" aria-label="MD Faysal Hossain, NSDA-certified web design and development trainer (Level-5 course), silent looping video"></video>
+            <figcaption class="exp-badge-inst"><i class="fas fa-award" aria-hidden="true"></i>NSDA Level-5 Trainer
+            </figcaption>
+          </figure>
+          <div class="exp-body">
+            <p class="exp-project">ASSET PROJECT- WORLD BANK FUNDED</p>
+            <h4><span class="exp-project-inst">Instructor</span>: Web Design &amp; Web Development for Freelancing (NSDA Level-5)</h4>
+            <p class="exp-inst"><i class="fas fa-building-columns" aria-hidden="true"></i><a
+                href="https://usitacademy.com/" target="_blank" rel="noopener noreferrer">US IT Academy</a></p>
+            <ul class="exp-stats" role="list" aria-label="Training results">
+              <li class="exp-stat"><span class="exp-stat-icon" aria-hidden="true"><i
+                    class="fas fa-users"></i></span><span class="exp-stat-text"><span
+                    class="exp-stat-num">24</span><span class="exp-stat-label">Total students trained</span></span></li>
+              <li class="exp-stat"><span class="exp-stat-icon" aria-hidden="true"><i
+                    class="fas fa-user-graduate"></i></span><span class="exp-stat-text"><span
+                    class="exp-stat-num">Running</span><span class="exp-stat-label">Competent graduates</span></span>
+              </li>
+              <li class="exp-stat"><span class="exp-stat-icon" aria-hidden="true"><i
+                    class="fas fa-clock"></i></span><span class="exp-stat-text"><span class="exp-stat-num">3
+                    Months</span><span class="exp-stat-label">Class duration</span></span></li>
+            </ul>
+            <p class="exp-desc">Delivered NSDA Level-5 competency-based classes in web design and web development for
+              freelancing through the ASSET Project at US IT Academy. I taught HTML5, CSS3, React, Vue.js, Angular,
+              Next.js, TypeScript, GSAP, responsive layouts and JavaScript, full-stack JavaScript framework used to
+              build modern, dynamic, and scalable web applications,<a href="https://www.php.net/" target="_blank"
+                rel="noopener noreferrer">PHP</a>,Cloud-based & SaaS CMS (WordPress,Shopify & Wix) then guided students
+              through building real websites (Ecommerce,) and getting ready to work with clients online.</p>
+          </div>
+        </article>
+      </div> <br>
+          <article class="exp-card">
+            <figure class="exp-media"><video class="exp-video" data-bg-video data-src-mp4="videos/trainer-level-3.mp4" poster="personal-img/md-faysal-hossain-remote-mern-stack-developer-dhaka-bangladesh-portrait-640.webp" width="640" height="640" autoplay loop muted playsinline preload="none" disablepictureinpicture disableremoteplayback controlslist="nodownload noplaybackrate noremoteplayback nofullscreen" tabindex="-1" role="img" aria-label="MD Faysal Hossain, NSDA-certified web design and development trainer (Level-3 course), silent looping video"></video>
+              <figcaption class="exp-badge"><i class="fas fa-award" aria-hidden="true"></i>NSDA Level-3 Trainer
+              </figcaption>
+            </figure>
+            <div class="exp-body">
+              <p class="exp-project">ASSET PROJECT- WORLD BANK FUNDED</p>
+              <h4><span class="exp-project-inst">Instructor</span>: Web Design &amp; Web Development for Freelancing (NSDA Level-3)</h4>
+              <p class="exp-inst"><i class="fas fa-building-columns" aria-hidden="true"></i><a
+                  href="https://www.iptm-it.com/" target="_blank" rel="noopener noreferrer">IPTM IT</a></p>
+              <ul class="exp-stats" role="list" aria-label="Training results">
+                <li class="exp-stat"><span class="exp-stat-icon" aria-hidden="true"><i
+                      class="fas fa-users"></i></span><span class="exp-stat-text"><span
+                      class="exp-stat-num">24</span><span class="exp-stat-label">Total students trained</span></span>
+                </li>
+                <li class="exp-stat"><span class="exp-stat-icon" aria-hidden="true"><i
+                      class="fas fa-user-graduate"></i></span><span class="exp-stat-text"><span
+                      class="exp-stat-num">18</span><span class="exp-stat-label">Competent graduates</span></span></li>
+                <li class="exp-stat"><span class="exp-stat-icon" aria-hidden="true"><i
+                      class="fas fa-clock"></i></span><span class="exp-stat-text"><span class="exp-stat-num">3
+                      Months</span><span class="exp-stat-label">Class duration</span></span></li>
+              </ul>
+              <p class="exp-desc">Delivered NSDA Level-3 competency-based classes in web design and web development for
+                freelancing through the ASSET Project at IPTM IT. I taught HTML5, CSS3, responsive layouts and
+                JavaScript basics, then guided students through building real websites and getting ready to work with
+                clients online.</p>
+            </div>
+          </article>
+        </div>
+    </section>
+
+    <section class="journey theme-light" id="journey" aria-labelledby="journey-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="journey-title">A skills path from IT basics to teaching</h2>
+          <p>Fifteen certified credentials, grouped by what they let me do. Scroll to follow the path, and open any
+            certificate image to see the original.</p>
+        </header>
+        <div class="path" id="path">
+          <div class="path-line" aria-hidden="true"><span class="path-fill"></span></div>
+          <ol class="stages" role="list">
+            <li class="stage">
+              <div class="stage-head">
+                <h3>Web and mobile development</h3>
+                <p>Full-stack web, Python web applications and Android apps.</p>
+                <p class="stage-count">6 credentials</p>
+              </div>
+              <ol class="certs" role="list">
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-1">"MERN Stack Development"</h4>
+                      <p class="cert-meta"><span><a href="https://dipti.com.bd/" target="_blank"
+                            rel="noopener noreferrer">Daffodil International Professional Training
+                            Institute(DIPTI)</a></span><span>Industry certified</span></p>
+                      <p class="cert-desc" id="cert-desc-1">Front-end topics cover HTML5, CSS3, Flexbox, Grid, Bootstrap, Tailwind CSS, ES6+ JavaScript,
+                        DOM manipulation, and Git. Modern client-side engineering covers React.js components, props,
+                        state, hooks, React Router, and Firebase authentication. Server-side development and database
+                        topics center on Node.js, Express.js middleware, REST APIs, MongoDB schemas, Mongoose ODM, JWT
+                        security, and bcrypt hashing. Deployment and business topics focus on Vercel/Render hosting,
+                        MongoDB Atlas setup, CORS, Upwork/Fiverr bidding strategies, portfolio curation, and
+                        international payment setups for live full-stack projects.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-1" aria-describedby="cert-title-1"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-mern-stack-development-certificate-dipti-biets.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the MERN stack development certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-mern-stack-development-certificate-dipti-biets.webp"
+                        width="1280" height="879"
+                        alt="Certificate of participation for the MERN stack development program at Daffodil International Professional Training Institute (DIPTI)"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-2">"Web Design and Development for Freelancing"</h4>
+                      <p class="cert-meta"><span><a href="https://doeleservices.com/" target="_blank"
+                            rel="noopener noreferrer">Doel e-Services</a></span><span>NSDA</span><span>Level 5</span>
+                      </p>
+                      <p class="cert-desc" id="cert-desc-2">Core technical modules cover modern JavaScript (ES6+), component-based front-end frameworks
+                        like React, and server-side development using Node.js or PHP. Trainees master database
+                        engineering with MySQL or MongoDB, RESTful API development, web security, JWT authentication,
+                        and cloud deployment via Git and Vercel. Additionally, freelancing modules emphasize Upwork
+                        bidding strategies, client contract negotiations, and international payment setups. Assessment
+                        Job Sheets require building a fully functional full-stack web application with secure backend
+                        APIs, database integration, and live deployment.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-2" aria-describedby="cert-title-2"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-web-design-development-freelancing-level-5-national-skills-certificate-bangladesh.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Web Design and Development Level 3 certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-web-design-development-freelancing-level-3-certificate.webp"
+                        width="576" height="821"
+                        alt="NSDA National Skills Certificate for Web Design and Development for Freelancing, Level 3"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-3">"Web Design and Development for Freelancing"</h4>
+                      <p class="cert-meta"><span><a href="https://europeanit-inst.com/" target="_blank"
+                            rel="noopener noreferrer">European IT Institute</a></span><span>NSDA</span><span>Level
+                          3</span></p>
+                      <p class="cert-desc" id="cert-desc-3">configure local web environments using XAMPP, VS Code, hosting, and FTP. Core modules cover
+                        semantic HTML5, CSS3 Flexbox layouts, media queries, and responsive grid frameworks like
+                        Bootstrap. Basic client-side interactivity includes vanilla JavaScript syntax, DOM manipulation,
+                        event listeners, and form validation. Graphic editing centers on cropping, scaling, and
+                        compressing UI images into PNG, JPEG, or SVG formats for optimized web performance.
+                        Additionally, modules cover basic WordPress setup, themes, and Elementor. Practical Job Sheets
+                        test converting static designs into responsive web pages.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-3" aria-describedby="cert-title-3"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-web-design-development-freelancing-level-3-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Web Design and Development Level 3 certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-web-design-development-freelancing-level-3-certificate.webp"
+                        width="576" height="821"
+                        alt="NSDA National Skills Certificate for Web Design and Development for Freelancing, Level 3"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-4">"Web Design"</h4>
+                      <p class="cert-meta"><span><a href="https://www.dcitltd.com.bd/" target="_blank"
+                            rel="noopener noreferrer">Dhaka CentreNIC IT Limited.</a></span><span>NSDA</span><span>Level
+                          3</span></p>
+                      <p class="cert-desc" id="cert-desc-4">configure local web environments using XAMPP, text editors, hosting servers, and client-server
+                        setups. Core markup and styling involve semantic HTML5 structuring, accessible forms, and CSS3
+                        properties utilizing the Box Model, Flexbox, media queries, and Bootstrap responsive grid
+                        systems. Design workflows center on converting UI wireframes, Figma, or PSD layouts into
+                        responsive web pages, alongside graphic asset slicing, scaling, and web image optimization.
+                        Interactive capabilities include basic vanilla JavaScript and jQuery for DOM element selection,
+                        event handling, and client-side form validation. Content management skills cover WordPress
+                        setup, theme customization, Elementor page builders, and plugin management. Finally, trainees
+                        learn domain management, hosting setups, cPanel administration, and uploading live site files
+                        using FTP clients to complete practical assessment Job Sheets.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-4" aria-describedby="cert-title-4"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-web-design-level-3-certificate.webp" target="_blank"
+                      rel="noopener" aria-label="Open the Web Design certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-web-design-level-3-certificate.webp" width="591"
+                        height="835" alt="NSDA National Skills Certificate for Web Design, Level 3" loading="lazy"
+                        decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-5">"Web Application Development with Python"</h4>
+                      <p class="cert-meta"><span><a href="https://ttc.touchandsolve.com/" target="_blank"
+                            rel="noopener noreferrer">TNS TTC</a></span><span>NSDA</span><span>Level 4</span></p>
+                      <p class="cert-desc" id="cert-desc-5">configure Python virtual environments, code editors, database tools, and version control
+                        workflows using Git and GitHub. Core programming concepts emphasize object-oriented Python
+                        syntax, data structures, decorators, error handling, and database integration. Web development
+                        modules cover Django architecture (Model-View-Template / Model-View-Controller), URL routing,
+                        views, request-response cycles, and dynamic template rendering. Database operations center on
+                        Object-Relational Mapping (ORM) using SQLite, PostgreSQL, or MySQL to handle models, migrations,
+                        CRUD logic, relational mappings, and query optimization. Security implementation includes Django
+                        user authentication, session management, CSRF protection, input sanitization, and password
+                        hashing. Additionally, candidates build RESTful Web APIs using Django REST Framework (DRF) for
+                        JSON data processing and client-server integration. Final deployment topics focus on production
+                        server setups, Gunicorn, Nginx, environment variable configuration, cloud hosting (e.g., Vercel,
+                        Render, or cPanel), and automated test execution. Assessment Job Sheets evaluate building
+                        dynamic web applications—such as e-commerce platforms, CMS systems, or project management
+                        tools—and deploying them live.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-5" aria-describedby="cert-title-5"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-python-web-application-development-level-4-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Python web application development certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-python-web-application-development-level-4-certificate.webp"
+                        width="590" height="836"
+                        alt="NSDA National Skills Certificate for Web Application Development with Python, Level 4, 360 hours"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-6">"Android Development with Kotlin"</h4>
+                      <p class="cert-meta"><span><span><a href="https://dipti.com.bd/" target="_blank"
+                              rel="noopener noreferrer">Daffodil International Professional Training
+                              Institute(DIPTI)</a></span><span>NSDA</span><span>Level 4</span></p>
+                      <p class="cert-desc" id="cert-desc-6">configure the development environment using Android Studio, Gradle build tools, Android Virtual
+                        Devices (AVD), and Git/GitHub version control. Core Kotlin programming covers variables, control
+                        flow, functions, null safety, collections, lambdas, and object-oriented programming (OOP)
+                        principles like inheritance, interfaces, and data classes. UI development modules center on XML
+                        layout design, ViewBinding, Jetpack Compose UI components, Material Design guidelines,
+                        RecyclerViews, ViewModels, and LiveData/StateFlow implementation. Local database management
+                        focuses on SQLite and Room Persistence Library for data modeling, DAOs, and local CRUD
+                        operations. Networking modules cover RESTful API consumption using Retrofit, asynchronous
+                        programming with Kotlin Coroutines, JSON parsing with Gson/Moshi, and image loading libraries.
+                        Background task execution includes WorkManager, Services, and notification handling. Security
+                        and deployment modules cover app permissions, APK/Android App Bundle (AAB) generation, signing
+                        certificates, Play Store submission workflows, and unit testing. Assessment Job Sheets evaluate
+                        building, testing, and deploying a functional, API-connected Android application.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-6" aria-describedby="cert-title-6"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-android-app-development-level-4-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Android development certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-android-app-development-level-4-certificate.webp"
+                        width="578" height="828"
+                        alt="NSDA National Skills Certificate for Android Mobile Application Development, Level 4, 360 hours"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+              </ol>
+            </li>
+            <li class="stage">
+              <div class="stage-head">
+                <h3>Computer and IT foundations</h3>
+                <p>The technical base: office software, operating systems, hardware and support.</p>
+                <p class="stage-count">4 credentials</p>
+              </div>
+              <ol class="certs" role="list">
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-7">"Computer Operation"</h4>
+                      <p class="cert-meta"><span><a href="https://ucepbd.org/" target="_blank"
+                            rel="noopener noreferrer">UCEP Bangladesh</a></span><span>NSDA</span><span>Level 3</span>
+                      </p>
+                      <p class="cert-desc" id="cert-desc-7">configure computer hardware workstations following ergonomic and Occupational Safety and Health
+                        (OSH) standards. Word processing skills cover document formatting, page setup, table creation,
+                        and advanced tools like Mail Merge to generate bulk invitations or certificates. Spreadsheet
+                        operations emphasize complex formulas, data lookup functions (VLOOKUP, INDEX/MATCH), data
+                        filtering, salary sheet calculations, and worksheet password protection. Presentation modules
+                        center on Slide Master layout customization, custom slide transitions, animation, and exporting
+                        presentations to video (.mp4) and PDF handout formats. Internet and cloud operations cover web
+                        research, email etiquette, Google Workspace tools (Google Forms and Drive management), and
+                        online file sharing. Basic maintenance skills cover peripheral connectivity, software setup,
+                        virus scanning, file compression, and routine system troubleshooting. Assessment Job Sheets
+                        evaluate executing practical tasks within strict time limits, exporting multiple file formats,
+                        and submitting printed or cloud-linked deliverables.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-7" aria-describedby="cert-title-7"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-computer-operation-level-3-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Computer Operation certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-computer-operation-level-3-certificate.webp"
+                        width="572" height="821"
+                        alt="NSDA Statement of Achievement for Computer Operation, Level 3, awarded to Md Faysal Hossain"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-8">"Computer Office Application"</h4>
+                      <p class="cert-meta"><span><a href="https://dhakarkmm.org/" target="_blank"
+                            rel="noopener noreferrer">Ramakrishna Mission Computer Training Center</a></span><span><a
+                            href="https://bteb.gov.bd/" target="_blank" rel="noopener noreferrer">BTEB</a></span><span>6
+                          Months</span></p>
+                      <p class="cert-desc" id="cert-desc-8">Computer operating fundamentals cover PC workstation configuration, Windows OS navigation, file
+                        management, software installation, utility management, peripheral setup, and preventive system
+                        care. Document processing emphasizes typing fluency in both English and Bangla (Bijoy and Avro
+                        layouts), document formatting, page setup, tables, mail merge, and printing configuration.
+                        Spreadsheet operations center on worksheet design, cell formatting, mathematical and logical
+                        functions, data sorting, filtering, chart creation, and PivotTable analysis. Presentation design
+                        covers custom slide master layouts, transitions, object animations, multimedia integration, and
+                        export settings. Database management focuses on table creation, data field types, validation
+                        rules, primary keys, queries, form generation, and report building. Internet and cloud services
+                        cover web navigation, email communication, Google Workspace applications (Drive, Docs, Sheets,
+                        Forms), file sharing, and cybersecurity awareness. Additionally, the curriculum introduces basic
+                        online marketplace freelancing concepts and workplace communication skills. Practical
+                        evaluations assess real-time document creation, numerical data processing, and slide
+                        presentation assembly.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-8" aria-describedby="cert-title-8"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-bangladesh-technical-education-board-computer-office-application-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Computer Office Application certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-bangladesh-technical-education-board-computer-office-application-certificate.webp"
+                        width="1600" height="1223"
+                        alt="Bangladesh Technical Education Board certificate for Computer Office Application, 360 hours"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-9">"IT Support Service"</h4>
+                      <p class="cert-meta"><span><a href="https://en.wikipedia.org/wiki/Graphic_Arts_Institute_(Dhaka)"
+                            target="_blank" rel="noopener noreferrer">Graphic Arts
+                            Institute</a></span><span>NSDA</span><span>Level 3</span></p>
+                      <p class="cert-desc" id="cert-desc-9">Hardware operations cover component identification, workstation ergonomics, safety standards,
+                        and disassembling or assembling desktop PC hardware like processors, motherboards, RAM, storage
+                        drives, and power supplies. System setups emphasize installing and configuring operating systems
+                        (Windows), system utility software, drivers, productivity tools, and anti-virus applications.
+                        Networking covers Ethernet cable preparation using crimping tools, local area network (LAN)
+                        setup, static IP configuration, printer sharing, file sharing, network troubleshooting using
+                        command-line diagnostic tools (like ping), and client email configuration. Data protection
+                        processes center on executing local and external data backup procedures, system recovery, and
+                        drive maintenance. Maintenance and diagnostic skills cover hardware and software
+                        troubleshooting, preventive system care, peripheral installation, virus scanning, and resolving
+                        end-user technical issues according to standard operating procedures. Assessment Job Sheets
+                        require performing PC assembly, network cabling, OS and software setups, IP configuration, and
+                        data backup under timed conditions.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-9" aria-describedby="cert-title-9"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-it-support-service-level-3-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the IT Support Service certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-it-support-service-level-3-certificate.webp"
+                        width="577" height="829" alt="NSDA National Skills Certificate for IT Support Service, Level 3"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-10">"LAPTOP MOTHERBOARD REPAIR & SERVICING"</h4>
+                      <p class="cert-meta"><span><a href="https://bcsbd.org.bd/"
+                            target="_blank" rel="noopener noreferrer">Bangladesh Computer Society (BCS)</a></span><span>NSDA</span><span>Level 3</span></p>
+                      <p class="cert-desc" id="cert-desc-10">Module 1: Laptop Hardware Fundamentals. Learn laptop components, motherboard architecture, and electronic component identification. Module 2: Motherboard Circuit Diagnostics. Understand circuit testing, voltage measurement, and hardware fault detection. Module 3: Chip-Level Repair Techniques. Explore motherboard component replacement, soldering basics, and chip-level troubleshooting. Module 4: Laptop Power System Repair. Learn to diagnose power failures, charging issues, and power circuit faults. Module 5: BIOS and Firmware Troubleshooting. Understand basic BIOS programming, firmware issues, and startup problem diagnosis. Module 6: Laptop Servicing and Maintenance. Develop practical skills in hardware troubleshooting, preventive maintenance, and laptop repair.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-10" aria-describedby="cert-title-10"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-laptop-motherboard-repair-servicing-training-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the IT Support Service certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-laptop-motherboard-repair-servicing-training-certificate.webp"
+                        width="577" height="829" alt="NSDA National Skills Certificate for IT Support Service, Level 3"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+              </ol>
+            </li>
+            <li class="stage">
+              <div class="stage-head">
+                <h>Design and digital marketing</h3>
+                <p>Visual design, responsive layouts, and the search skills that bring visitors in.</p>
+                <p class="stage-count">2 credentials</p>
+              </div>
+              <ol class="certs" role="list">
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-11">"Graphic Design for Freelancing"</h4>
+                      <p class="cert-meta"><span><a href="https://en.wikipedia.org/wiki/Graphic_Arts_Institute_(Dhaka)"
+                            target="_blank" rel="noopener noreferrer">Graphic Arts
+                            Institute</a></span><span>NSDA</span><span>Level 3</span></p>
+                      <p class="cert-desc" id="cert-desc-11">Core visual design fundamentals center on visual communication principles, color theory,
+                        typography hierarchy, contrast, balance, and spatial alignment. Digital asset creation and photo
+                        manipulation utilize vector illustration and raster editing tools to develop logos, marketing
+                        banners, social media graphics, business stationery, flyers, brochures, packaging layouts, and
+                        digital ad creative. Production workflows emphasize developing design sketches, applying
+                        effects, image separation and composition, creating product mockups, and exporting print-ready
+                        (CMYK) or screen-optimized (RGB) digital files. Artificial intelligence tools are integrated to
+                        assist with design asset generation, ideation, and rapid drafting. Freelance operations cover
+                        proposal writing, client communication in English, setting up online profiles on platforms like
+                        Upwork and Fiverr, managing revisions, preparing project documentation, and organizing portfolio
+                        showcases. Practical assessment Job Sheets require designing and presenting branding materials
+                        according to client specifications.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-11" aria-describedby="cert-title-11"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-graphic-design-freelancing-level-3-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Graphic Design certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-graphic-design-freelancing-level-3-certificate.webp"
+                        width="574" height="826"
+                        alt="NSDA Statement of Achievement for Graphic Design for Freelancing, Level 3" loading="lazy"
+                        decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-12">"Digital Marketing for Freelancing"</h4>
+                      <p class="cert-meta"><span><a href="https://e-laeltd.com/" target="_blank"
+                            rel="noopener noreferrer">E-Learning & Earning Ltd.</a></span><span>NSDA</span><span>Level
+                          3</span></p>
+                      <p class="cert-desc" id="cert-desc-12">Foundational levels cover keyword research, on-page and off-page SEO, social media management,
+                        Google Ads, Meta Ads campaigns, Google Analytics 4, email leads, Upwork/Fiverr bidding, and
+                        local payment setups. Advanced stages focus on Local SEO, technical audits, retargeting,
+                        conversion rate optimization, AI content generation, and retainer client contracts. Executive
+                        levels center on omnichannel strategy design, enterprise budget scaling, multi-touch
+                        attribution, CRM automation, global market expansion, GDPR compliance, and managing digital
+                        agency operations. Practical assessments evaluate live campaign setups, analytical reporting,
+                        and client management.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-12" aria-describedby="cert-title-12"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-digital-marketing-seo-freelancing-level-3-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Digital Marketing certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-digital-marketing-seo-freelancing-level-3-certificate.webp"
+                        width="595" height="830"
+                        alt="NSDA National Skills Certificate for Digital Marketing for Freelancing, Level 3, 360 hours"
+                        loading="lazy" decoding="async"></a>
+                  </article>
+                </li>
+              </ol>
+            </li>
+            <li class="stage">
+              <div class="stage-head">
+                <h3>Teaching and advanced practice</h3>
+                <p>Training others to the national competency standard, and the newest advanced credential.</p>
+                <p class="stage-count">3 credentials</p>
+              </div>
+              <ol class="certs" role="list">
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-13">"Training of Trainers (ToT)"</h4>
+                      <p class="cert-meta"><span><a
+                            href="https://en.wikipedia.org/wiki/National_Skills_Development_Authority" target="_blank"
+                            rel="noopener noreferrer">National Skills Development
+                            Authority</a></span><span>NSDA</span><span>Refresher training</span></p>
+                      <p class="cert-desc" id="cert-desc-13">Re-alignment focuses on updating TVET quality assurance frameworks, occupational safety
+                        standards, and national skill development policies. Pedagogical refinement covers
+                        competency-based learning material adjustments, inclusive training practices, and integrating
+                        digital tools into learning environments. Assessment updates center on reviewing assessment
+                        evidence, organizing competency-based evaluations, and maintaining evaluation standards.
+                        Institutional management covers facility maintenance, training equipment upkeeping, and
+                        professional development tracking. Practical evaluations verify updated instructional delivery,
+                        lesson planning, and mock assessment conduct.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-13" aria-describedby="cert-title-13"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-nsda-refresher-training-of-trainers-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Training of Trainers certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-nsda-refresher-training-of-trainers-certificate.webp"
+                        width="1600" height="1263"
+                        alt="NSDA certificate of participation in the refresher Training of Trainers" loading="lazy"
+                        decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-14">"FREELANCE FOCUS: UPSKILLING FOR A BETTER FUTURE"</h4>
+                      <p class="cert-meta"><span><a
+                            href="https://www.bacco.org.bd/" target="_blank"
+                            rel="noopener noreferrer">Bangladesh Association of Contact Center and Outsourcing (BACCO)</a></span><span>ICT DIVISION</span><span>FREELANCE FOCUS</span></p>
+                      <p class="cert-desc" id="cert-desc-14">Module 1: Freelance Marketplace Profile Optimization. Optimize Upwork, Fiverr, and LinkedIn profiles to attract clients and showcase professional skills. Module 2: Advanced Proposal Writing. Write compelling freelance proposals that highlight expertise and meet client requirements. Module 3: Client Communication. Develop professional communication skills to understand client needs and build lasting relationships. Module 4: Portfolio Building. Create a professional portfolio showcasing skills, experience, and practical projects. Module 5: Freelance Pricing Strategies. Learn to set competitive service prices and determine appropriate freelance rates. Module 6: Payment Management. Understand freelance payment methods and manage client payments effectively. Module 7: Financial Planning. Develop budgeting, income management, and financial planning skills for freelancing. Module 8: Freelance Career Roadmap. Build a long-term career plan to grow professionally and succeed in the global freelancing marketplace.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-14" aria-describedby="cert-title-14"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-freelance-focus-upskilling-for-a-better-future-bacco-ict-division.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Training of Trainers certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-freelance-focus-upskilling-for-a-better-future-bacco-ict-division.webp"
+                        width="1600" height="1263"
+                        alt="NSDA certificate of participation in the refresher Training of Trainers" loading="lazy"
+                        decoding="async"></a>
+                  </article>
+                </li>
+                <li class="cert"><span class="cert-node" aria-hidden="true"></span>
+                  <article class="cert-card">
+                    <div class="cert-body">
+                      <h4 id="cert-title-15">"CYBER SECURITY AWARENESS"</h4>
+                      <p class="cert-meta"><span><a
+                            href="https://bd.linkedin.com/company/byte-care-academy" target="_blank"
+                            rel="noopener noreferrer">BYTE CARE ACADEMY</a></span><span>Paid</span><span>WEB SECURITY AWARENESS TRAINING</span></p>
+                      <p class="cert-desc" id="cert-desc-15">Module 1: Introduction to Cybersecurity. Understand cybersecurity fundamentals, common cyber threats, digital security principles, and the importance of protecting personal and organizational information. Module 2: Phishing and Email Security. Learn to identify phishing emails, fake websites, suspicious attachments, email scams, and social engineering tactics used to steal sensitive information. Module 3: Password Security and Multi-Factor Authentication. Discover how to create strong passwords, use password managers, enable multi-factor authentication (MFA), and prevent unauthorized account access. Module 4: Malware and Ransomware Awareness. Explore viruses, spyware, Trojans, ransomware, and other malicious software, including prevention techniques and safe file-handling practices. Module 5: Social Engineering and Online Scams. Recognize manipulation techniques, impersonation attacks, identity theft, online fraud, and common tactics used by cybercriminals. Module 6: Safe Internet Browsing. Learn to recognize malicious links, suspicious downloads, fake websites, unsafe connections, and potential online security risks. Module 7: Data Privacy and Protection. Understand personal data protection, confidential information handling, privacy settings, secure file sharing, and responsible data management. Module 8: Mobile Device and Wi-Fi Security. Discover best practices for securing smartphones, laptops, public Wi-Fi connections, home networks, and connected devices. Module 9: Social Media Security. Learn to protect social media accounts, manage privacy settings, identify fake profiles, and prevent account hijacking and information exposure. Module 10: Incident Reporting and Cybersecurity Best Practices. Understand how to report suspicious activities, respond to potential security incidents, protect compromised accounts, and develop safer digital habits.</p>
+                      <button type="button" class="cert-toggle" aria-expanded="false" aria-controls="cert-desc-15" aria-describedby="cert-title-15"><span class="cert-toggle-label" data-closed="Explore details" data-open="Minimize details">Explore details</span><svg class="cert-toggle-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div><a class="cert-thumb"
+                      href="personal-img/md-faysal-hossain-cyber-security-awareness-certificate.webp"
+                      target="_blank" rel="noopener"
+                      aria-label="Open the Training of Trainers certificate image in a new tab"><img
+                        src="personal-img/md-faysal-hossain-cyber-security-awareness-certificate.webp"
+                        width="1600" height="1263"
+                        alt="NSDA certificate of participation in the refresher Training of Trainers" loading="lazy"
+                        decoding="async"></a>
+                  </article>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="services theme-dark" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <header class="section-head">
+          <h2 id="services-title">What I build and teach</h2>
+          <p>Six areas of work, each backed by the credentials above.</p>
+        </header>
+        <ul class="service-list" role="list">
+          <li>
+            <h3>MERN stack development</h3>
+            <p>Full-stack applications with<a href="https://www.mongodb.com/" target="_blank"
+                rel="noopener noreferrer">MongoDB</a>,<a href="https://expressjs.com/" target="_blank"
+                rel="noopener noreferrer">Express.js</a>,<a href="https://react.dev/React.js" target="_blank"
+                rel="noopener noreferrer"></a>and<a href="https://nodejs.org/en" target="_blank"
+                rel="noopener noreferrer">Node.js</a>, including API development.</p>
+          </li>
+          <li>
+            <h3>Web design and responsive front end</h3>
+            <p>Modern, accessible layouts built with<a href="https://html.spec.whatwg.org/multipage/" target="_blank"
+                rel="noopener noreferrer">HTML</a>,<a href="https://www.w3.org/Style/CSS/Overview.en.html"
+                target="_blank" rel="noopener noreferrer">CSS</a>,<a href="https://ecma-international.org/"
+                target="_blank" rel="noopener noreferrer">JavaScript</a>,<a href="https://tailwindcss.com/"
+                target="_blank" rel="noopener noreferrer">Tailwind CSS</a>and<a href="https://getbootstrap.com/"
+                target="_blank" rel="noopener noreferrer">Bootstrap</a>.</p>
+          </li>
+          <li>
+            <h3>eCommerce and CMS websites</h3>
+            <p><a href="https://www.shopify.com/" target="_blank" rel="noopener noreferrer">Shopify</a>,<a
+                href="https://woocommerce.com/" target="_blank" rel="noopener noreferrer">WooCommerce</a>,<a
+                href="https://en.wikipedia.org/wiki/WordPress" target="_blank"
+                rel="noopener noreferrer">WordPress</a>,<a href="https://en.wikipedia.org/wiki/Wix.com" target="_blank"
+                rel="noopener noreferrer">Wix</a>,<a href="https://en.wikipedia.org/wiki/Webflow" target="_blank"
+                rel="noopener noreferrer">Webflow</a>and<a href="https://en.wikipedia.org/wiki/Squarespace"
+                target="_blank" rel="noopener noreferrer">Squarespace sites</a>, with<a
+                href="https://en.wikipedia.org/wiki/Payment_gateway" target="_blank" rel="noopener noreferrer">payment
+                gateway integration</a>.</p>
+          </li>
+          <li>
+            <h3>SEO and digital marketing</h3>
+            <p><a href="https://www.semrush.com/blog/on-page-seo/" target="_blank"
+                rel="noopener noreferrer">On-page</a>and<a href="https://www.semrush.com/blog/technical-seo/"
+                target="_blank" rel="noopener noreferrer">technical SEO</a>,<a
+                href="https://ahrefs.com/seo/keyword-research" target="_blank" rel="noopener noreferrer">keyword
+                research</a>and<a
+                href="https://www.nt-consultant.in/post/effective-online-growth-strategies-for-business-success"
+                target="_blank" rel="noopener noreferrer">online growth strategy</a>.</p>
+          </li>
+          <li>
+            <h3>Android apps with Kotlin</h3>
+            <p>Kotlin-based Android application development and interface design.</p>
+          </li>
+          <li>
+            <h3>Training and mentoring</h3>
+            <p>NSDA-certified web design and freelancing training using competency-based methods.</p>
+          </li>
+        </ul>
+        <p class="inline-links"><a class="text-link" href="portfolio">Browse the portfolio</a><a class="text-link"
+            href="skills">Read the full skills list</a></p>
+      </div>
+    </section>
+    <section class="faq theme-dark" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-grid">
+        <header class="section-head">
+          <h2 id="faq-title">Questions people ask</h2>
+          <p>Short answers about who I am, where I work and how to reach me.</p>
+        </header>
+        <div class="faq-list">
+          <details>
+            <summary>Who is MD Faysal Hossain?</summary>
+            <p>MD Faysal Hossain (FaysalByte) is a certified MERN Stack developer, web designer, SEO expert and
+              NSDA-certified trainer based in Dhaka, Bangladesh.</p>
+          </details>
+          <details>
+            <summary>What services does he offer?</summary>
+            <p>MERN stack development, responsive web design, eCommerce and CMS websites, SEO and digital marketing,
+              Android app development with Kotlin, and web design and freelancing training.</p>
+          </details>
+          <details>
+            <summary>Does he work with international clients?</summary>
+            <p>Yes. He works remotely with clients in the USA, UK, Canada, Australia and Europe, as well as in
+              Bangladesh.</p>
+          </details>
+          <details>
+            <summary>Which certifications does he hold?</summary>
+            <p>NSDA Level 3 and Level 5 Web Design and Development for Freelancing, Level 4 Web Application Development
+              with Python, Level 4 Android Development with Kotlin, Level 3 Digital Marketing, Level 3 IT Support
+              Service, a BTEB Computer Office Application certificate, an industry MERN stack certificate from DIPTI,
+              and Training of Trainers.</p>
+          </details>
+          <details>
+            <summary>How can I contact him?</summary>
+            <p>Use the<a class="text-link" href="contact">contact page</a>, email md.faysal.hossain.moti.bddh@gmail.com,
+              or call or message +880 1595 530901 on WhatsApp.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+    <section class="cta theme-dark" id="start" aria-labelledby="cta-title">
+      <div class="wrap cta-inner">
+        <h2 id="cta-title">Tell me what you want to build.</h2>
+        <p>Send a short message about your project or training need and get a clear reply.</p>
+        <div class="cta-actions"><a class="btn btn-primary" href="contact">Open the contact form</a><a
+            class="btn btn-ghost" href="mailto:md.faysal.hossain.moti.bddh@gmail.com">Email me</a><a
+            class="btn btn-ghost" href="https://wa.me/8801595530901" target="_blank"
+            rel="noopener noreferrer">WhatsApp</a></div>
+      </div>
+    </section>
+    <section class="reviews theme-light" id="reviews" aria-labelledby="reviews-title">
+      <div class="wrap" id="google-review">
+        <header class="section-head rv-head"><span class="sx-eyebrow">Google Reviews</span>
+          <h2 id="reviews-title">Worked with me? Tell the world.</h2>
+          <p>Your honest review helps other clients and learners find me.</p>
+        </header><a class="rv-card" href="https://g.page/r/CWAiqghQZkkaEBI/review" target="_blank"
+          rel="noopener noreferrer" aria-label="Google Reviews: leave a review (opens in a new tab)"><span
+            class="rv-sparkles" aria-hidden="true"><svg class="sp-1" viewBox="0 0 22 22" focusable="false">
+              <path class="gold-sparkle"
+                d="M11 0 C12 7 15 10 22 11 C15 12 12 15 11 22 C10 15 7 12 0 11 C7 10 10 7 11 0Z" fill="#d4af37" />
+            </svg><svg class="sp-2" viewBox="0 0 22 22" focusable="false">
+              <path class="gold-sparkle"
+                d="M11 0 C12 7 15 10 22 11 C15 12 12 15 11 22 C10 15 7 12 0 11 C7 10 10 7 11 0Z" fill="#d4af37" />
+            </svg><svg class="sp-3" viewBox="0 0 22 22" focusable="false">
+              <path class="gold-sparkle"
+                d="M11 0 C12 7 15 10 22 11 C15 12 12 15 11 22 C10 15 7 12 0 11 C7 10 10 7 11 0Z" fill="#d4af37" />
+            </svg><svg class="sp-4" viewBox="0 0 22 22" focusable="false">
+              <path class="gold-sparkle"
+                d="M11 0 C12 7 15 10 22 11 C15 12 12 15 11 22 C10 15 7 12 0 11 C7 10 10 7 11 0Z" fill="#d4af37" />
+            </svg></span><svg class="rv-stars" viewBox="0 0 260 53" role="img" aria-label="Five gold stars"
+            focusable="false">
+            <defs>
+              <linearGradient id="gStarGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f6dc7c" />
+                <stop offset=".5" stop-color="#d4af37" />
+                <stop offset="1" stop-color="#a8801a" />
+              </linearGradient>
+              <linearGradient id="gShineGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#fff8dc" stop-opacity="0" />
+                <stop offset=".5" stop-color="#fffbe8" stop-opacity=".95" />
+                <stop offset="1" stop-color="#fff8dc" stop-opacity="0" />
+              </linearGradient>
+              <clipPath id="gStarClip">
+                <path
+                  d="M26.00 3.50 L31.64 18.73 L47.87 19.39 L35.13 29.47 L39.52 45.11 L26.00 36.10 L12.48 45.11 L16.87 29.47 L4.13 19.39 L20.36 18.73Z" />
+                <path
+                  d="M78.00 3.50 L83.64 18.73 L99.87 19.39 L87.13 29.47 L91.52 45.11 L78.00 36.10 L64.48 45.11 L68.87 29.47 L56.13 19.39 L72.36 18.73Z" />
+                <path
+                  d="M130.00 3.50 L135.64 18.73 L151.87 19.39 L139.13 29.47 L143.52 45.11 L130.00 36.10 L116.48 45.11 L120.87 29.47 L108.13 19.39 L124.36 18.73Z" />
+                <path
+                  d="M182.00 3.50 L187.64 18.73 L203.87 19.39 L191.13 29.47 L195.52 45.11 L182.00 36.10 L168.48 45.11 L172.87 29.47 L160.13 19.39 L176.36 18.73Z" />
+                <path
+                  d="M234.00 3.50 L239.64 18.73 L255.87 19.39 L243.13 29.47 L247.52 45.11 L234.00 36.10 L220.48 45.11 L224.87 29.47 L212.13 19.39 L228.36 18.73Z" />
+              </clipPath>
+            </defs>
+            <path class="gold-star"
+              d="M26.00 3.50 L31.64 18.73 L47.87 19.39 L35.13 29.47 L39.52 45.11 L26.00 36.10 L12.48 45.11 L16.87 29.47 L4.13 19.39 L20.36 18.73Z"
+              fill="url(#gStarGrad)" />
+            <path class="gold-star"
+              d="M78.00 3.50 L83.64 18.73 L99.87 19.39 L87.13 29.47 L91.52 45.11 L78.00 36.10 L64.48 45.11 L68.87 29.47 L56.13 19.39 L72.36 18.73Z"
+              fill="url(#gStarGrad)" />
+            <path class="gold-star"
+              d="M130.00 3.50 L135.64 18.73 L151.87 19.39 L139.13 29.47 L143.52 45.11 L130.00 36.10 L116.48 45.11 L120.87 29.47 L108.13 19.39 L124.36 18.73Z"
+              fill="url(#gStarGrad)" />
+            <path class="gold-star"
+              d="M182.00 3.50 L187.64 18.73 L203.87 19.39 L191.13 29.47 L195.52 45.11 L182.00 36.10 L168.48 45.11 L172.87 29.47 L160.13 19.39 L176.36 18.73Z"
+              fill="url(#gStarGrad)" />
+            <path class="gold-star"
+              d="M234.00 3.50 L239.64 18.73 L255.87 19.39 L243.13 29.47 L247.52 45.11 L234.00 36.10 L220.48 45.11 L224.87 29.47 L212.13 19.39 L228.36 18.73Z"
+              fill="url(#gStarGrad)" />
+            <g clip-path="url(#gStarClip)">
+              <rect class="gold-shine" x="0" y="0" width="56" height="53" fill="url(#gShineGrad)" />
+            </g>
+          </svg>
+          <h3 class="rv-title">Google Reviews</h3><svg class="rv-line" viewBox="0 0 160 10" aria-hidden="true"
+            focusable="false">
+            <defs>
+              <linearGradient id="gLineGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="160" y2="0">
+                <stop offset="0" stop-color="#a8801a" stop-opacity="0" />
+                <stop offset=".3" stop-color="#d4af37" />
+                <stop offset=".5" stop-color="#f6dc7c" />
+                <stop offset=".7" stop-color="#d4af37" />
+                <stop offset="1" stop-color="#a8801a" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <path class="gold-line" d="M2 5 H158" pathLength="1" fill="none" stroke="url(#gLineGrad)" stroke-width="3"
+              stroke-linecap="round" />
+          </svg><span class="rv-text">Share your experience on Google. It takes less than a minute.</span><span
+            class="rv-cta">Leave a review<i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
+        </a>
+        <div class="rv-actions" role="group" aria-label="Share this Google review link"
+          data-share-path="/share/google-review"><button type="button" class="rv-share-btn" data-rv-action="share"
+            aria-label="Share the Google review link"><i class="fas fa-share-nodes"
+              aria-hidden="true"></i><span>Share</span></button><button type="button" class="rv-share-btn"
+            data-rv-action="copy" aria-label="Copy the Google review link"><i class="fas fa-link"
+              aria-hidden="true"></i><span>Copy link</span></button></div>
+      </div>
+    </section>
+    <section class="location theme-dark" id="location" aria-labelledby="map-title">
+      <div class="wrap">
+        <header class="section-head loc-head"><span class="sx-eyebrow">Find Me</span>
+          <h2 id="map-title">My<strong>Location</strong></h2>
+          <p>Based in Dhaka, Bangladesh. Available for remote projects worldwide.</p>
+        </header>
+        <div class="loc-frame"><iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.29522203473275!2d90.42476544331136!3d23.721564227607438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x65c7323e7275c11b%3A0x1a49665008aa2260!2sFaysal%20Hossain!5e0!3m2!1sen!2sbd!4v1792598147103!5m2!1sen!2sbd"
+            height="350" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+            title="MD Faysal Hossain location on Google Maps"
+            aria-label="Google Map showing MD Faysal Hossain in Dhaka, Bangladesh"></iframe></div>
+        <div class="loc-meta">
+          <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i>Dhaka, Bangladesh</p>
+          <p>Available for remote work worldwide</p>
+          <p class="loc-open"><a href="https://maps.app.goo.gl/td2HsgJeBrUZF9W19" target="_blank"
+              rel="noopener noreferrer">Open in Google Maps</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer theme-dark">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">MD Faysal Hossain</p>
+        <p>MERN Stack Developer &amp; Web Design Trainer in Dhaka, Bangladesh.</p>
+        <p class="copyright">&copy;<span id="year">2026</span>All rights reserved.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <p class="footer-title">Quick links</p>
+        <ul role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="skills">About</a></li>
+          <li><a href="portfolio">Portfolio</a></li>
+          <li><a href="contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-social">
+        <p class="footer-title">Connect with me</p>
+        <ul class="social-links" role="list">
+          <li><a href="https://bd.linkedin.com/in/faysalbyte" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="LinkedIn profile"><i class="fab fa-linkedin-in"
+                aria-hidden="true"></i></a></li>
+          <li><a href="https://github.com/faysalbyte" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+          <li><a href="https://x.com/faysalbyte" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="X profile"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="https://www.facebook.com/faysalbyte" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="Facebook profile"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/faysalbyte/" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="https://www.youtube.com/@md.faysal.hossain" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="YouTube channel"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="https://www.pinterest.com/faysalbyte/" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="Pinterest profile"><i class="fab fa-pinterest-p"
+                aria-hidden="true"></i></a></li>
+          <li><a href="https://www.tiktok.com/@faysalbyte" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="TikTok profile"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  <p class="brand-tagline" lang="en"><strong>Dialectical</strong> &mdash; Thesis, antithesis, better code.</p></footer>
+  <script src="common.js" defer="defer"></script>
+  <script src="viewport-sync.js" defer></script>
+  <script src="script.js" defer="defer"></script>
+  <script src="trainer-video.js" defer></script>
+  <script src="audio-guide.js" defer></script>
+  <script src="skeleton.js" defer></script>
+  <script src="cert-toggle.js" defer></script>
+  <script src="https://faysalbyte-ai-backend.vercel.app/api/ai-voice-assistant/embed" defer></script>
+<script src="enhance.js" defer></script></body>
+</html>

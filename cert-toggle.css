@@ -1,0 +1,97 @@
+/* cert-toggle.css  -  Section 5 (skills path): 15 certificate cards
+   Additive only. Colours: charcoal #0a0a0a, orange #FF6B00.
+   Motion = opacity/transform only (compositor); will-change is set by JS only while a card animates. */
+
+/* ---- soft, curved cards with drop-shadow ---- */
+.cert-card {
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(10, 10, 10, .06), 0 14px 34px -10px rgba(10, 10, 10, .18);
+}
+.cert.is-current .cert-card {
+  box-shadow: inset 4px 0 0 var(--ember-d), 0 1px 2px rgba(10, 10, 10, .06), 0 18px 40px -10px rgba(10, 10, 10, .24);
+}
+.cert-thumb { border-radius: 12px; }
+
+/* ---- description: strictly 2 lines by default ---- */
+.cert-body .cert-desc {
+  color: var(--text-2);
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cert-body .cert-desc.is-open {
+  display: block;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+}
+
+/* ---- premium toggle button ---- */
+.cert-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: 44px;
+  margin-top: 1rem;
+  padding: 0 1.25rem 0 1.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff8a33 0%, #FF6B00 55%, #e85d00 100%);
+  color: #0a0a0a;
+  font: 700 .9375rem/1 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: .01em;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 6px 18px -4px rgba(255, 107, 0, .55), inset 0 1px 0 rgba(255, 255, 255, .35);
+  transition: transform .25s cubic-bezier(.22, 1, .36, 1), box-shadow .25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.cert-toggle[hidden] { display: none; }
+.cert-toggle:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -4px rgba(255, 107, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .4); }
+.cert-toggle:active { transform: translateY(0) scale(.97); }
+.cert-toggle:focus-visible { outline: 3px solid #0a0a0a; outline-offset: 3px; }
+.cert-toggle-icon {
+  width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1);
+}
+.cert-toggle[aria-expanded="true"] .cert-toggle-icon { transform: rotate(180deg); }
+
+/* glowing pulse ring: transform + opacity only, runs only while the card is on screen and collapsed */
+.cert-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid #FF6B00;
+  opacity: 0;
+  pointer-events: none;
+}
+.cert-card.is-live .cert-toggle[aria-expanded="false"]::after { animation: cert-pulse 2.4s ease-out infinite; }
+@keyframes cert-pulse {
+  0%   { opacity: .65; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(1.16, 1.5); }
+  100% { opacity: 0;   transform: scale(1.16, 1.5); }
+}
+
+/* ---- progressive word-by-word reveal on expand ---- */
+.cert-desc.is-typing .cw { opacity: 0; animation: cert-word .38s ease-out forwards; will-change: opacity; }
+@keyframes cert-word { to { opacity: 1; } }
+
+@media (max-width: 700px) {
+  .cert-card { border-radius: 18px; }
+  .cert-toggle { min-height: 46px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cert-toggle, .cert-toggle-icon { transition: none; }
+  .cert-toggle::after { animation: none !important; }
+  .cert-desc.is-typing .cw { animation: none; opacity: 1; }
+}
+@media print {
+  .cert-body .cert-desc { display: block; -webkit-line-clamp: unset; line-clamp: unset; }
+  .cert-toggle { display: none; }
+}

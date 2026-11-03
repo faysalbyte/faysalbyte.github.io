@@ -1,0 +1,167 @@
+/* ==========================================================================
+   style.css - shared by EVERY page.
+   Contains only the base reset plus the navbar, mobile menu, skip link and
+   footer exactly as they look on the home page. Page specific styles live in
+   home.css / skills.css / portfolio.css / contact.css / ... so the shared
+   parts can never drift apart again.
+   ========================================================================== */
+
+@font-face{font-family:"Inter Fallback";src:local("Arial"),local("Helvetica Neue"),local("Roboto");size-adjust:107.4%;ascent-override:90.2%;descent-override:22.5%;line-gap-override:0%}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body,html{overflow-x:hidden}body{background:#e8edf2;color:#303a46;font-family:Inter,"Inter Fallback",sans-serif;min-height:100vh;min-height:100dvh}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{cursor:pointer;font-family:inherit}
+
+/* ---------- design tokens used only by the shared parts ---------- */
+.navbar, .mobile-menu, .skip-link, .site-footer {
+  --ink: #070c16;
+  --rule: #2a3854;
+  --snow: #f5f7fb;
+  --mist: #b7c3d6;
+  --ember: #ff8a5c;
+  --cobalt: #6ea8ff;
+  --focus: #ffb08a;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+  --ease: cubic-bezier(.2, .7, .1, 1);
+}
+
+/* ---------- skip link ---------- */
+.skip-link {
+  position: fixed; left: 1rem; top: -5rem; z-index: 300;
+  padding: .85rem 1.25rem; border-radius: 6px;
+  background: var(--ember); color: var(--ink); font-weight: 700;
+  font-family: Inter, "Inter Fallback", sans-serif; line-height: 1.65;
+  transition: top .2s var(--ease);
+}
+.skip-link:focus { top: 1rem; }
+main:focus { outline: none; }
+
+/* ---------- navigation (dark glass, same on every page) ---------- */
+.navbar, .navbar *, .mobile-menu, .mobile-menu *, .site-footer, .site-footer * { box-sizing: border-box; }
+
+.navbar {
+  align-items: center; display: flex; justify-content: space-between;
+  position: fixed; top: 0; left: 0; width: 100%; height: 76px; z-index: 100;
+  padding: 0 clamp(18px, 5vw, 80px);
+  background: rgba(7, 12, 22, .92);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+  box-shadow: none;
+  color: var(--snow);
+  font-family: Inter, "Inter Fallback", sans-serif;
+  font-size: clamp(1rem, .96rem + .2vw, 1.125rem);
+  line-height: 1.65;
+}
+.navbar::after {                              /* page progress (--page-p is set by common.js) */
+  content: ""; position: absolute; left: 0; bottom: -1px; width: 100%; height: 3px;
+  background: linear-gradient(90deg, var(--ember), var(--cobalt));
+  transform-origin: 0 50%; transform: scaleX(var(--page-p, 0));
+}
+
+.brand {
+  color: #fff; font-size: clamp(23px, 3vw, 28px); font-weight: 800; letter-spacing: -.04em;
+  text-shadow: none; white-space: nowrap;
+  transition: transform .25s ease, text-shadow .25s ease;
+}
+.brand:active { transform: translateY(2px); }
+.brand span { color: var(--ember); text-shadow: none; }
+
+.nav-links { align-items: center; display: flex; gap: clamp(10px, 2vw, 20px); }
+.nav-links a {
+  position: relative; border-radius: 12px; padding: 10px 14px;
+  color: #dbe3f0; font-size: .9rem; font-weight: 600; letter-spacing: .5px; text-shadow: none;
+  transition: color .3s ease, transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.nav-links a.active, .nav-links a[aria-current="page"], .nav-links a:hover {
+  background: rgba(255, 255, 255, .1); box-shadow: none; color: #fff; transform: none;
+}
+.nav-links a:after {
+  content: ""; position: absolute; left: 50%; bottom: 4px; width: 0; height: 2px;
+  background: var(--ember); border-radius: 10px; transform: translateX(-50%); transition: width .3s ease;
+}
+.nav-links a.active:after, .nav-links a[aria-current="page"]:after, .nav-links a:hover:after { width: 45%; }
+
+.menu-button {
+  align-items: center; display: none; flex-direction: column; justify-content: center; gap: 5px;
+  width: 44px; height: 44px; border-radius: 13px;
+  background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .22); box-shadow: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.menu-button:active { transform: translateY(2px); }
+.menu-button span { width: 22px; height: 2px; border-radius: 5px; background: #fff; box-shadow: none; transition: .3s ease; }
+.menu-button.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-button.open span:nth-child(2) { opacity: 0; }
+.menu-button.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none; flex-direction: column; gap: 6px;
+  position: fixed; top: 88px; left: 12px; right: 12px; z-index: 90; padding: 18px;
+  border-radius: 18px; background: rgba(11, 18, 32, .98);
+  border: 1px solid rgba(255, 255, 255, .14); box-shadow: 0 18px 40px rgba(0, 0, 0, .5);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  opacity: 0; transform: translateY(-130%);
+  transition: transform .35s ease, opacity .35s ease;
+  font-family: Inter, "Inter Fallback", sans-serif; line-height: 1.65;
+}
+.mobile-menu.open { display: flex; opacity: 1; transform: translateY(0); }
+.mobile-menu a {
+  border-radius: 12px; padding: 14px 12px; color: #e6ecf6; font-size: 1rem; font-weight: 600; text-shadow: none;
+  transition: transform .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.mobile-menu a:hover, .mobile-menu a[aria-current="page"] { background: rgba(255, 255, 255, .1); box-shadow: none; color: #fff; transform: none; }
+
+.navbar :focus-visible, .mobile-menu :focus-visible, .site-footer :focus-visible, .skip-link:focus-visible {
+  outline: 3px solid var(--focus); outline-offset: 3px;
+}
+
+@media (max-width: 800px) {
+  .navbar { height: 70px; padding: 0 18px; }
+  .nav-links { display: none; }
+  .menu-button { display: flex; }
+  .mobile-menu { display: flex; top: 82px; }
+}
+@media (max-width: 480px) {
+  .navbar { padding: 0 15px; }
+  .brand { font-size: 23px; }
+}
+
+/* ---------- footer (same on every page) ---------- */
+.site-footer {
+  position: relative; z-index: 1; padding: 3.5rem 0 3rem;
+  background: var(--ink); border-top: 1px solid var(--rule); color: var(--snow);
+  font-family: Inter, "Inter Fallback", sans-serif;
+  font-size: clamp(1rem, .96rem + .2vw, 1.125rem); font-weight: 400; line-height: 1.65; text-align: left;
+}
+.site-footer .wrap { width: min(100% - 2 * var(--gutter), 72rem); margin-inline: auto; }
+.site-footer p { max-width: 66ch; }
+.site-footer ul { list-style: none; }
+.footer-grid { display: grid; grid-template-columns: 1.2fr .7fr 1.4fr; gap: 2.5rem; }
+.footer-name { color: #fff; font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em; margin-bottom: .5rem; }
+.footer-brand .copyright { margin-top: 1rem; font-size: .9375rem; }
+.footer-title { color: #fff; font-weight: 700; margin-bottom: 1rem; }
+.footer-nav li + li { margin-top: .5rem; }
+.footer-nav a { display: inline-block; padding: .25rem 0; color: var(--mist); transition: color .2s ease, transform .2s var(--ease); }
+.footer-nav a:hover { color: #fff; transform: translateX(4px); }
+.social-links { display: flex; flex-wrap: wrap; gap: .5rem; }
+.social-icon {
+  display: inline-flex; align-items: center; justify-content: center; width: 2.5rem; height: 2.5rem;
+  border: 1px solid var(--rule); border-radius: 6px; color: #fff; font-size: 1.15rem;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s var(--ease);
+}
+.social-icon:hover { background: var(--ember); border-color: var(--ember); color: var(--ink); transform: translateY(-3px); }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 700px) {
+  .footer-grid { grid-template-columns: minmax(0, 1fr); }
+  .social-icon { width: 2.75rem; height: 2.75rem; }
+}
+@media (hover: none) {
+  .nav-links a:hover, .social-icon:hover, .footer-nav a:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :after, :before { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+@media print {
+  .navbar, .mobile-menu, .skip-link { display: none; }
+}
