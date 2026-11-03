@@ -1,0 +1,56 @@
+{
+  "ecommerce": [
+    {
+      "file": "cart-and-checkout.webp",
+      "alt": "Cart and checkout"
+    },
+    {
+      "file": "product-detail-page.webp",
+      "alt": "Product detail page"
+    },
+    {
+      "file": "shop-product-grid.webp",
+      "alt": "Shop product grid"
+    },
+    {
+      "file": "store-admin-orders.webp",
+      "alt": "Store admin orders"
+    }
+  ],
+  "general": [
+    {
+      "file": "dashboard-overview.webp",
+      "alt": "Dashboard overview"
+    },
+    {
+      "file": "home-hero-layout.webp",
+      "alt": "Home hero layout"
+    },
+    {
+      "file": "responsive-mobile-view.webp",
+      "alt": "Responsive mobile view"
+    },
+    {
+      "file": "seo-ready-pages.webp",
+      "alt": "Seo ready pages"
+    }
+  ],
+  "portfolio": [
+    {
+      "file": "about-and-skills.webp",
+      "alt": "About and skills"
+    },
+    {
+      "file": "contact-section.webp",
+      "alt": "Contact section"
+    },
+    {
+      "file": "portfolio-landing-page.webp",
+      "alt": "Portfolio landing page"
+    },
+    {
+      "file": "project-gallery.webp",
+      "alt": "Project gallery"
+    }
+  ]
+}
